@@ -312,6 +312,17 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
+/* the easy way first: Flight Deck Manager does it */
+.easy{border:1px solid var(--brass-dim);border-left:3px solid var(--brass);border-radius:3px;background:rgba(192,160,98,.07);padding:14px 16px;margin-top:18px;color:var(--ink2);font-size:15px}
+.easy .k{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.easy .k svg{width:16px;height:16px}
+.easy p{margin:8px 0 0}
+.easy p b{color:var(--ink);font-weight:400}
+.quick{margin:10px 0 0;padding:0;list-style:none;counter-reset:q}
+.quick>li{counter-increment:q;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:7px 0}
+.quick>li::before{content:counter(q);width:24px;height:24px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:12.5px}
+.quick>li b{color:var(--ink);font-weight:400}
+.byhand{color:var(--muted)!important}
 .tip svg{color:var(--brass);margin-top:2px}
 .tip.warn svg{color:var(--amber)}
 .step .ok{display:flex;gap:10px;align-items:flex-start;color:var(--green);font-size:14.5px;margin-top:14px}
@@ -377,7 +388,14 @@ section.doc{padding:0;scroll-margin-top:84px}
     <a class="back" href="index.html">‹ Flight Deck Suite</a>
     <span class="eyebrow" style="display:block">Before you start</span>
     <h2 style="margin-top:6px">Everything the apps need, step by step.</h2>
-    <p class="lead">The suite's apps work alongside a few free programs and accounts made by other people. <b style="font-weight:400;color:var(--ink)">Part 1</b> gets them ready before you install anything. <b style="font-weight:400;color:var(--ink)">Part 2</b> sets up each app once it's installed. You only need the steps for the apps you plan to use: the table shows which.</p>
+    <p class="lead">The suite's apps work alongside a few free programs and accounts made by other people. Flight Deck Manager does most of the work for you: the quickest way is just below. <b style="font-weight:400;color:var(--ink)">Part 1</b> explains each program and account, and how to get it by hand. <b style="font-weight:400;color:var(--ink)">Part 2</b> sets up each app once it's installed. You only need the steps for the apps you plan to use: the table shows which.</p>
+    <div class="easy" style="margin:22px 0 26px"><span class="k"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>The quickest way</span>
+      <ol class="quick">
+        <li><div><b>Have Microsoft Flight Simulator 2024</b> (step 1), plus the accounts for the apps you want: VATSIM and vPilot for Squawk (steps 2 and 3), FSLTL for Ramp (step 5).</div></li>
+        <li><div><b>Install Flight Deck Manager</b> (<a href="index.html#install">Installing</a>). It checks your PC and shows what each app still needs.</div></li>
+        <li><div><b>Select <span class="ui">Install for me</span></b> next to anything it can add itself: OBS Studio, Tailscale and Microsoft Edge WebView2, each from its official source. Its <span class="ui">Finish setting up</span> card then lists the sign-ins that need you, with a link to each step here.</div></li>
+      </ol>
+      <p>Using only Logbook? Microsoft Flight Simulator 2024 is all you need. Anything already on your PC is never downloaded again. The steps below also show how to do each part by hand.</p></div>
 
     <table class="which">
       <thead><tr><th>What</th><th>For</th><th>Needed?</th><th>Cost</th></tr></thead>
@@ -385,16 +403,15 @@ section.doc{padding:0;scroll-margin-top:84px}
         <tr><td><a href="#msfs">Microsoft Flight Simulator 2024</a></td><td data-k="For">every app</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>Yes</td><td data-k="Cost">paid</td></tr>
         <tr><td><a href="#vatsim">A VATSIM account</a></td><td data-k="For">Squawk, and flying online</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>For Squawk</td><td data-k="Cost">free</td></tr>
         <tr><td><a href="#vpilot">vPilot</a></td><td data-k="For">Squawk</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>For Squawk</td><td data-k="Cost">free</td></tr>
-        <tr><td><a href="#tailscale">Tailscale</a></td><td data-k="For">Squawk; Logbook's Share my flight</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>For Squawk</td><td data-k="Cost">free for personal use</td></tr>
+        <tr><td><a href="#tailscale">Tailscale</a><span class="pill b" style="margin-left:10px">Install for me</span></td><td data-k="For">Squawk; Logbook's Share my flight</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>For Squawk</td><td data-k="Cost">free for personal use</td></tr>
         <tr><td><a href="#fsltl">FSLTL Base Models</a></td><td data-k="For">Ramp</td><td data-k="Needed?"><span class="dot" style="background:var(--brass)"></span>For Ramp</td><td data-k="Cost">free</td></tr>
-        <tr><td><a href="#webview2">Microsoft Edge WebView2</a></td><td data-k="For">Ramp and the Manager's window</td><td data-k="Needed?"><span class="dot" style="background:var(--green)"></span>Added by the Manager</td><td data-k="Cost">free</td></tr>
-        <tr><td><a href="#obs">OBS Studio</a></td><td data-k="For">Playback's video clips</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">free</td></tr>
+        <tr><td><a href="#webview2">Microsoft Edge WebView2</a><span class="pill b" style="margin-left:10px">Install for me</span></td><td data-k="For">Ramp and the Manager's window</td><td data-k="Needed?"><span class="dot" style="background:var(--green)"></span>Added by the Manager</td><td data-k="Cost">free</td></tr>
+        <tr><td><a href="#obs">OBS Studio</a><span class="pill b" style="margin-left:10px">Install for me</span></td><td data-k="For">Playback's video clips</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">free</td></tr>
         <tr><td><a href="#gsx">GSX's Remote Control Server</a></td><td data-k="For">Ramp, if you use GSX</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">part of GSX</td></tr>
         <tr><td><a href="#simbrief">A SimBrief account</a></td><td data-k="For">Logbook, Squawk and Ramp: your flight plan</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Recommended</td><td data-k="Cost">free</td></tr>
         <tr><td><a href="#github">A GitHub account</a></td><td data-k="For">Share my flight's always-on page</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">free</td></tr>
       </tbody>
     </table>
-    <div class="tip" style="margin-top:22px;max-width:none;border-left-color:var(--brass-dim)"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>Using only Logbook? Microsoft Flight Simulator 2024 is all you need. Flight Deck Manager also checks your PC before it installs an app, links to anything still missing, and can install OBS Studio, Tailscale and WebView2 for you (<span class="ui">Install for me</span>). Anything you already have is never downloaded again.</div></div>
     <nav class="toc" aria-label="Steps"><a href="#msfs">1 · MSFS 2024</a><a href="#vatsim">2 · VATSIM</a><a href="#vpilot">3 · vPilot</a><a href="#tailscale">4 · Tailscale</a><a href="#fsltl">5 · FSLTL</a><a href="#webview2">6 · WebView2</a><a href="#obs">7 · OBS Studio</a><a href="#gsx">8 · GSX</a><a href="#simbrief">9 · SimBrief</a><a href="#github">10 · GitHub</a><a href="#after">Part 2 · After you install</a></nav>
 
     <div class="part" id="part1"><span class="eyebrow">Part 1</span><h2>Before you install</h2></div>
@@ -446,9 +463,10 @@ section.doc{padding:0;scroll-margin-top:84px}
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-link"/></svg></span><div class="w"><span class="num">Step 4 · for Squawk</span><h2>Tailscale</h2></div></div>
       <div class="for"><span><b>Needed by</b> Squawk; also Logbook's Share my flight</span><span><b>Cost</b> free for personal use</span><span><b>Time</b> about 10 minutes</span></div>
       <p>Tailscale makes a private, encrypted link between your PC and your phone, so Squawk on the phone can reach vPilot on the PC from anywhere, with nothing to change on your router. It goes on <b>both</b> the PC and the phone, signed in to the same account.</p>
+      <div class="easy"><span class="k"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Easiest: Flight Deck Manager</span><p><b>In Flight Deck Manager, select <span class="ui">Install for me</span> next to Tailscale</b> and answer Windows' permission prompt. Then sign in (step 2 below), and do the phone and secure links parts: those always need you.</p></div>
       <h3>On the PC</h3>
       <ol>
-        <li><div><b>Download Tailscale for Windows</b> from <a href="https://tailscale.com/download/windows" target="_blank" rel="noopener">tailscale.com/download/windows</a> and open the file to install it.</div></li>
+        <li><div><b>Download Tailscale for Windows</b> <span class="byhand">(by hand; skip this if the Manager installed it)</span> from <a href="https://tailscale.com/download/windows" target="_blank" rel="noopener">tailscale.com/download/windows</a> and open the file to install it.</div></li>
         <li><div><b>Sign in.</b> Select the Tailscale icon near the clock (it may be under the <span class="ui">^</span> arrow), choose <span class="ui">Log in</span>, and sign in in the browser with a Google, Microsoft, Apple or GitHub account. Use one you can also sign in with on your phone.</div></li>
       </ol>
       <h3>On the iPhone or iPad</h3>
@@ -487,7 +505,8 @@ section.doc{padding:0;scroll-margin-top:84px}
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-window"/></svg></span><div class="w"><span class="num">Step 6 · usually nothing to do</span><h2>Microsoft Edge WebView2</h2></div></div>
       <div class="for"><span><b>Needed by</b> Ramp and the Manager's window</span><span><b>Cost</b> free</span></div>
       <p>WebView2 is the Microsoft component that draws the windows of Ramp and Flight Deck Manager. It's part of Windows 11 and is already on most Windows 10 PCs. <b>Flight Deck Manager checks for it and installs it from Microsoft if it's missing,</b> so most people have nothing to do here.</p>
-      <h3>To check or install it yourself</h3>
+      <div class="easy"><span class="k"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Easiest: Flight Deck Manager</span><p><b>If the Manager shows WebView2 as Not found, select <span class="ui">Install for me</span></b> next to it. (If the Manager's own window opens empty, install it by hand below.)</p></div>
+      <h3>By hand: check or install it yourself</h3>
       <ol>
         <li><div><b>Check:</b> open Windows <span class="ui">Settings</span> › <span class="ui">Apps</span> › <span class="ui">Installed apps</span> and look for <span class="ui">Microsoft Edge WebView2 Runtime</span>. If it's there, you're done.</div></li>
         <li><div><b>Install:</b> on Microsoft's <a href="https://developer.microsoft.com/microsoft-edge/webview2/" target="_blank" rel="noopener">WebView2 page</a>, under <span class="ui">Evergreen Bootstrapper</span>, select <span class="ui">Download</span>, then open the downloaded file.</div></li>
@@ -498,10 +517,12 @@ section.doc{padding:0;scroll-margin-top:84px}
     <article class="step" id="obs">
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-video"/></svg></span><div class="w"><span class="num">Step 7 · optional</span><h2>OBS Studio</h2></div></div>
       <div class="for"><span><b>Needed by</b> Playback's video clips only (replays and screenshots work without it)</span><span><b>Cost</b> free</span><span><b>Time</b> about 5 minutes</span></div>
+      <div class="easy"><span class="k"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg>Easiest: two buttons</span><p><b>In Flight Deck Manager, select <span class="ui">Install for me</span> next to OBS Studio.</b> Then, once Logbook is installed, <b>open Logbook's Settings and select <span class="ui">Set up OBS for me</span></b>: it switches on OBS's remote control for you, keeping a backup of OBS's settings. Then keep OBS open when you play back a landing you'd like to film (step 4 below).</p></div>
+      <h3>By hand</h3>
       <ol>
         <li><div><b>Download OBS Studio for Windows</b> from <a href="https://obsproject.com/download" target="_blank" rel="noopener">obsproject.com/download</a> and open the file to install it, keeping the choices it suggests.</div></li>
         <li><div><b>Start OBS.</b> If its Auto-Configuration Wizard opens, you can cancel it: Playback records with its own OBS profile and leaves yours as it is.</div></li>
-        <li><div><b>Switch on OBS's remote control:</b> <span class="ui">Tools</span> › <span class="ui">WebSocket Server Settings</span> › tick <span class="ui">Enable WebSocket server</span> › <span class="ui">OK</span>. Leave the port and password as they are; Logbook reads them from OBS's settings.</div></li>
+        <li><div><b>Switch on OBS's remote control:</b> <span class="ui">Tools</span> › <span class="ui">WebSocket Server Settings</span> › tick <span class="ui">Enable WebSocket server</span> › <span class="ui">OK</span>. Leave the port and password as they are; Logbook reads them from OBS's settings. (Logbook's <span class="ui">Set up OBS for me</span> does this step for you.)</div></li>
         <li><div><b>Have OBS open</b> when you play back a landing you'd like to film. Clips are saved to <code>Videos\Flight Deck Suite\Playback</code> and appear on that flight's logbook page.</div></li>
       </ol>
       <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>Playback adds two scenes named "Flight Replay" to your OBS scene collection; nothing else in OBS is changed.</div></div>

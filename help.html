@@ -312,6 +312,17 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
+/* the easy way first: Flight Deck Manager does it */
+.easy{border:1px solid var(--brass-dim);border-left:3px solid var(--brass);border-radius:3px;background:rgba(192,160,98,.07);padding:14px 16px;margin-top:18px;color:var(--ink2);font-size:15px}
+.easy .k{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.easy .k svg{width:16px;height:16px}
+.easy p{margin:8px 0 0}
+.easy p b{color:var(--ink);font-weight:400}
+.quick{margin:10px 0 0;padding:0;list-style:none;counter-reset:q}
+.quick>li{counter-increment:q;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:7px 0}
+.quick>li::before{content:counter(q);width:24px;height:24px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:12.5px}
+.quick>li b{color:var(--ink);font-weight:400}
+.byhand{color:var(--muted)!important}
 .tip svg{color:var(--brass);margin-top:2px}
 .tip.warn svg{color:var(--amber)}
 .step .ok{display:flex;gap:10px;align-items:flex-start;color:var(--green);font-size:14.5px;margin-top:14px}
@@ -451,7 +462,7 @@ section.doc{padding:0;scroll-margin-top:84px}
       <p>Replays and screenshots work without OBS Studio; only the video clips need it.</p>
       <ol>
         <li><div><b>Have OBS open</b> when you play back the landing.</div></li>
-        <li><div><b>Switch on OBS's remote control:</b> <span class="ui">Tools</span> › <span class="ui">WebSocket Server Settings</span> › tick <span class="ui">Enable WebSocket server</span> › <span class="ui">OK</span> (<a href="before-you-start.html#obs">Before you start, step 7</a>).</div></li>
+        <li><div><b>Switch on OBS's remote control:</b> in Logbook's Settings, select <span class="ui">Set up OBS for me</span>. Or by hand in OBS: <span class="ui">Tools</span> › <span class="ui">WebSocket Server Settings</span> › tick <span class="ui">Enable WebSocket server</span> › <span class="ui">OK</span> (<a href="before-you-start.html#obs">Before you start, step 7</a>).</div></li>
       </ol>
     </article>
 

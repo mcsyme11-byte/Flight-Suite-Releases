@@ -312,6 +312,17 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
+/* the easy way first: Flight Deck Manager does it */
+.easy{border:1px solid var(--brass-dim);border-left:3px solid var(--brass);border-radius:3px;background:rgba(192,160,98,.07);padding:14px 16px;margin-top:18px;color:var(--ink2);font-size:15px}
+.easy .k{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+.easy .k svg{width:16px;height:16px}
+.easy p{margin:8px 0 0}
+.easy p b{color:var(--ink);font-weight:400}
+.quick{margin:10px 0 0;padding:0;list-style:none;counter-reset:q}
+.quick>li{counter-increment:q;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:7px 0}
+.quick>li::before{content:counter(q);width:24px;height:24px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:12.5px}
+.quick>li b{color:var(--ink);font-weight:400}
+.byhand{color:var(--muted)!important}
 .tip svg{color:var(--brass);margin-top:2px}
 .tip.warn svg{color:var(--amber)}
 .step .ok{display:flex;gap:10px;align-items:flex-start;color:var(--green);font-size:14.5px;margin-top:14px}
@@ -549,9 +560,9 @@ section.doc{padding:0;scroll-margin-top:84px}
       <div class="shead"><span class="eyebrow">Installing</span><h2>Three steps, with no administrator rights required.</h2></div>
       <div class="inst">
         <ol class="steps">
-          <li><span class="n">1</span><div><b>Open FlightDeckManager-Setup.exe</b> from the Downloads folder.</div></li>
+          <li><span class="n">1</span><div><b>Open FlightDeckManager-Setup.exe</b> from the Downloads folder, and select <b>Yes</b> when it asks to install Flight Deck Manager for this Windows user.</div></li>
           <li><span class="n">2</span><div><b>If Windows displays a blue warning, select More info, then Run anyway.</b> The warning appears because the Manager is new and is not yet signed with a commercial code-signing certificate; it does not indicate a problem with the software.</div></li>
-          <li><span class="n">3</span><div><b>Choose your apps and select Install.</b> The Manager checks your PC, downloads each app, checks it and installs it. It keeps them up to date from then on.</div></li>
+          <li><span class="n">3</span><div><b>Choose your apps and select Install.</b> The Manager checks your PC, downloads each app, checks it and installs it. It keeps them up to date from then on, and can install OBS Studio, Tailscale and WebView2 for you if they're missing (<b>Install for me</b>).</div></li>
         </ol>
         <figure class="ss">
           <div class="box" aria-hidden="true">
