@@ -1,0 +1,126 @@
+{
+ "v": 1,
+ "manager": {
+  "version": "0.1.1",
+  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.1/FlightDeckManager-Setup.exe",
+  "sha256": "584c329e4f88ddb7363317570e2b918de71119a0e2bd107d26500807ea6f773e",
+  "size": 1126400,
+  "notes": [
+   "The first public release."
+  ]
+ },
+ "apps": [
+  {
+   "id": "logbook",
+   "name": "Logbook",
+   "sub": "with Playback and Hangar",
+   "desc": "Logs every flight by itself, with an accurate landing rate, landing replays, the Logbook site and Share my flight.",
+   "status": "available",
+   "version": "4.9",
+   "date": "2026-11-10",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.9/Logbook-4.9.zip",
+   "sha256": "dd128202a3bbd32a9049f1809a54bd47044a76cc2f274c62a3222178c130e979",
+   "size": 13840673,
+   "notes": [
+    "The first public release."
+   ],
+   "needs": [
+    {
+     "id": "msfs",
+     "required": true
+    },
+    {
+     "id": "obs",
+     "required": false,
+     "why": "optional, records the landing videos for Playback"
+    },
+    {
+     "id": "tailscale",
+     "required": false,
+     "why": "optional, for Share my flight's live page"
+    }
+   ],
+   "icon": "book",
+   "start": "msfs"
+  },
+  {
+   "id": "ramp",
+   "name": "Ramp",
+   "sub": "airliners at the empty gates",
+   "desc": "Parks airliners on empty stands in the right airlines for each airport, and keeps your gate and VATSIM pilots' stands clear.",
+   "status": "available",
+   "version": "0.3.1",
+   "date": "2026-11-10",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/ramp-0.3.1/Ramp-0.3.1.zip",
+   "sha256": "0a1009ed39e6d977cbd5086994c193bd036008924f2704426a6eb6306463a48d",
+   "size": 2529303,
+   "notes": [
+    "The first public release."
+   ],
+   "needs": [
+    {
+     "id": "msfs",
+     "required": true
+    },
+    {
+     "id": "fsltl",
+     "required": true
+    },
+    {
+     "id": "webview2",
+     "required": true
+    },
+    {
+     "id": "gsx",
+     "required": false,
+     "why": "optional, keeps your GSX gate clear"
+    }
+   ],
+   "icon": "plane",
+   "start": "msfs"
+  },
+  {
+   "id": "vantage",
+   "name": "Vantage",
+   "sub": "cameras, sound and feel",
+   "desc": "Saved views per aircraft, a view menu over the sim, tower and fly-by views, and sounds added on top of the sim's own.",
+   "icon": "view",
+   "status": "soon"
+  },
+  {
+   "id": "squawk",
+   "name": "Squawk",
+   "sub": "vPilot on your phone",
+   "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
+   "status": "available",
+   "version": "6.6",
+   "date": "2026-11-10",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.6/Squawk-6.6.zip",
+   "sha256": "319eff9d08cd0437a5afc70938d59a60efeab0354bc117e985dac50ddee81245",
+   "size": 722378,
+   "notes": [
+    "The first public release."
+   ],
+   "needs": [
+    {
+     "id": "vpilot",
+     "required": true
+    },
+    {
+     "id": "tailscale",
+     "required": true
+    },
+    {
+     "id": "vatsim",
+     "required": true
+    },
+    {
+     "id": "iphone",
+     "required": true
+    }
+   ],
+   "icon": "phone",
+   "start": "vpilot"
+  }
+ ]
+}
