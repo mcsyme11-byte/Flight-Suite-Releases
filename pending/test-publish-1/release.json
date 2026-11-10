@@ -1,0 +1,9 @@
+{
+ "tag": "test-publish-1",
+ "title": "Workflow test",
+ "latest": false,
+ "files": [
+  "workflow-test.txt",
+  "CHECKSUMS.txt"
+ ]
+}

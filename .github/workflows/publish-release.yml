@@ -1,0 +1,114 @@
+# Flight Deck Suite · publishes one GitHub release of this repository · © 2026 Malcolm Syme · mcsyme11@gmail.com
+#
+# A release is prepared as a folder pending/<tag>/ (written by public-release/release/stage_release.py in the source
+# repository): release.json (title, latest, the files), notes.md and CHECKSUMS.txt, with the files themselves. This
+# workflow is started by hand (workflow_dispatch) with that tag. It checks every file against CHECKSUMS.txt (SHA-256
+# and size) and stops if one doesn't match, if the tag is already used, or if the folder is incomplete; then it creates
+# the release with the repository's own token (no personal token; the release shows as made by github-actions[bot]),
+# reads it back, and removes the folder. With "test" ticked, the release is made as a draft, read back and deleted
+# again, and the folder is kept: nothing is published.
+name: Publish release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "The release's tag, the name of its folder in pending/ (e.g. logbook-5.0)"
+        required: true
+        type: string
+      test:
+        description: "Test only: make a draft, check it and delete it again (nothing is published)"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TAG: ${{ inputs.tag }}
+      TEST: ${{ inputs.test }}
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check the release folder and every file
+        run: |
+          set -eu
+          case "$TAG" in ""|*[!a-z0-9.-]*|.*|*..*) echo "::error::The tag may only use a-z, 0-9, dots and dashes: $TAG"; exit 1;; esac
+          test -d "pending/$TAG" || { echo "::error::There is no folder pending/$TAG"; exit 1; }
+          if gh release view "$TAG" >/dev/null 2>&1; then echo "::error::A release $TAG already exists"; exit 1; fi
+          python3 - <<'PY'
+          import hashlib, json, os, re, sys
+          tag = os.environ["TAG"]; d = os.path.join("pending", tag)
+          for need in ("release.json", "notes.md", "CHECKSUMS.txt"):
+              if not os.path.isfile(os.path.join(d, need)): sys.exit("::error::pending/%s/%s is missing" % (tag, need))
+          r = json.load(open(os.path.join(d, "release.json"), encoding="utf-8"))
+          if r.get("tag") != tag: sys.exit("::error::release.json names the tag %r, not %r" % (r.get("tag"), tag))
+          if not isinstance(r.get("title"), str) or not r["title"].strip(): sys.exit("::error::release.json has no title")
+          if not isinstance(r.get("latest"), bool): sys.exit("::error::release.json must say latest: true or false")
+          files = r.get("files")
+          if not isinstance(files, list) or not files or "CHECKSUMS.txt" not in files: sys.exit("::error::release.json must list the files, CHECKSUMS.txt included")
+          listed = {}
+          for line in open(os.path.join(d, "CHECKSUMS.txt"), encoding="utf-8"):
+              m = re.match(r"^SHA-256\s+([0-9a-f]{64})\s+(\S+)\s+\((\d+) bytes\)\s*$", line.strip())
+              if m: listed[m.group(2)] = (m.group(1), int(m.group(3)))
+          for f in files:
+              if f != os.path.basename(f) or f.startswith(".") or " " in f: sys.exit("::error::not a plain file name: " + f)
+              p = os.path.join(d, f)
+              if not os.path.isfile(p): sys.exit("::error::pending/%s/%s is missing" % (tag, f))
+              if f == "CHECKSUMS.txt": continue
+              if f not in listed: sys.exit("::error::%s isn't in CHECKSUMS.txt" % f)
+              h = hashlib.sha256(open(p, "rb").read()).hexdigest(); size = os.path.getsize(p)
+              if (h, size) != listed[f]: sys.exit("::error::%s doesn't match CHECKSUMS.txt (SHA-256 %s, %d bytes)" % (f, h, size))
+              print("checked %s: SHA-256 %s, %d bytes" % (f, h, size))
+          extra = sorted(set(os.listdir(d)) - set(files) - {"release.json", "notes.md"})
+          if extra: sys.exit("::error::files not listed in release.json: " + ", ".join(extra))
+          with open(os.environ["GITHUB_ENV"], "a") as e:
+              e.write("TITLE=%s\nLATEST=%s\nFILES=%s\n" % (r["title"].replace("\n", " "), "true" if r["latest"] else "false", " ".join(files)))
+          PY
+
+      - name: Create the release
+        run: |
+          set -eu
+          cd "pending/$TAG"
+          if [ "$TEST" = "true" ]; then
+            gh release create "$TAG" $FILES --title "$TITLE" --notes-file notes.md --target main --draft
+          else
+            gh release create "$TAG" $FILES --title "$TITLE" --notes-file notes.md --target main --latest="$LATEST"
+          fi
+
+      - name: Read the release back
+        run: |
+          set -eu
+          gh release view "$TAG" --json tagName,name,isDraft,assets --jq '"\(.tagName) · \(.name) · draft \(.isDraft) · " + ([.assets[] | "\(.name) \(.size)"] | join(", "))'
+          for f in $FILES; do
+            want=$(stat -c%s "pending/$TAG/$f")
+            got=$(gh release view "$TAG" --json assets --jq ".assets[] | select(.name==\"$f\") | .size")
+            [ "$got" = "$want" ] || { echo "::error::$f was uploaded with $got bytes, not $want"; exit 1; }
+          done
+
+      - name: "Test only: delete the draft again"
+        if: ${{ always() && inputs.test }}
+        run: |
+          gh release delete "$TAG" --yes --cleanup-tag || true
+          echo "Test finished: nothing was published, and pending/$TAG is kept."
+
+      - name: Remove the release folder
+        if: ${{ !inputs.test }}
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git rm -r -q "pending/$TAG"
+          git commit -q -m "Published $TAG (its release folder removed)"
+          git push -q
