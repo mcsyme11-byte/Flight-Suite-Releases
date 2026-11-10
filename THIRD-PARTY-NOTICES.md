@@ -18,7 +18,7 @@ page, and each release's package includes the notices for the files it ships.
 | timezonefinder | each airport's time zone | MIT | <https://github.com/jannikmi/timezonefinder> |
 | timezone-boundary-builder | time zone boundaries, data © OpenStreetMap contributors | ODbL 1.0 | <https://github.com/evansiroky/timezone-boundary-builder> |
 | FFmpeg | the share copies of landing videos; a separate program, run on the PC | GPL | <https://ffmpeg.org/> |
-| VATSIM Spy data project | VATSIM airports, for Share my flight | see the project | <https://github.com/vatsimnetwork/vatspy-data-project> |
+| VATSIM Spy data project | VATSIM airports, for Share my flight (downloaded by the app) | CC BY-SA 4.0 | <https://github.com/vatsimnetwork/vatspy-data-project> |
 
 Services used, each under its own terms: SimBrief (the latest flight plan, with your username), VATSIM (weather
 reports, events and the public data feed), Tailscale Funnel and GitHub Pages (Share my flight), Google Calendar (only
@@ -30,7 +30,7 @@ licence (GPL-2.0) and is not included.
 | Component or data | Used for | Licence | Link |
 |---|---|---|---|
 | VATSIM public data feeds | network data, weather and events | VATSIM's terms | <https://vatsim.net/> |
-| VATSIM Spy data project | airspace boundaries | see the project | <https://github.com/vatsimnetwork/vatspy-data-project> |
+| VATSIM Spy data project | airspace boundaries (downloaded by the app) | CC BY-SA 4.0 | <https://github.com/vatsimnetwork/vatspy-data-project> |
 | Natural Earth | coastlines | public domain | <https://www.naturalearthdata.com/> |
 | OurAirports | runways | public domain | <https://ourairports.com/> |
 | Open-Meteo | the destination's time zone | CC BY 4.0 (data) | <https://open-meteo.com/> |
@@ -80,7 +80,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Flight Deck Manager
 
-The Manager's own components are listed here with its first release.
+| Component | Used for | Licence | Link |
+|---|---|---|---|
+| Microsoft Edge WebView2 SDK | the Manager's window | BSD-style (the notice under Ramp) | <https://www.nuget.org/packages/Microsoft.Web.WebView2> |
+
+The Manager downloads the suite's own apps from this repository's releases; each app's package carries its own
+notices.
 
 ## The website
 
