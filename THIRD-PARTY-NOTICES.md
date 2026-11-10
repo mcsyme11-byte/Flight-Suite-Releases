@@ -8,7 +8,7 @@ page, and each release's package includes the notices for the files it ships.
 
 | Component or data | Used for | Licence | Link |
 |---|---|---|---|
-| Python | the language Logbook runs in | Python Software Foundation License | <https://www.python.org/> |
+| Python, with what PyInstaller packs with it (Tcl/Tk, OpenSSL, SQLite, libffi, zlib, bzip2, xz, the Visual C++ runtime) | the language Logbook runs in | Python Software Foundation License; the others under their own (BSD-style, Apache-2.0, MIT, zlib, public domain; listed in the package) | <https://www.python.org/> |
 | PyInstaller | packs Logbook into one program | GPL-2.0, with its bootloader exception | <https://pyinstaller.org/> |
 | Microsoft SimConnect | the sim's own interface | Microsoft Flight Simulator SDK terms, © Microsoft Corporation | <https://docs.flightsimulator.com/> |
 | OurAirports | airports and runways | public domain | <https://ourairports.com/> |
@@ -16,7 +16,7 @@ page, and each release's package includes the notices for the files it ships.
 | topojson-client | drawing the map | ISC | <https://github.com/topojson/topojson-client> |
 | timezonefinder | each airport's time zone | MIT | <https://github.com/jannikmi/timezonefinder> |
 | timezone-boundary-builder | time zone boundaries, data © OpenStreetMap contributors | ODbL 1.0 | <https://github.com/evansiroky/timezone-boundary-builder> |
-| FFmpeg | the share copies of landing videos; a separate program, run on the PC | GPL | <https://ffmpeg.org/> |
+| FFmpeg | the share copies of landing videos: downloaded by Logbook from gyan.dev's builds (GPL), not shipped; a separate program, run on the PC | GPL v3 | <https://www.gyan.dev/ffmpeg/builds/> |
 | VATSIM Spy data project | VATSIM airports, for Share my flight (downloaded by the app) | CC BY-SA 4.0 | <https://github.com/vatsimnetwork/vatspy-data-project> |
 
 Services used, each under its own terms: SimBrief (the latest flight plan, with your username), VATSIM (weather
