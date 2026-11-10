@@ -1,12 +1,12 @@
 {
  "v": 1,
  "manager": {
-  "version": "0.1.1",
-  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.1/FlightDeckManager-Setup.exe",
-  "sha256": "584c329e4f88ddb7363317570e2b918de71119a0e2bd107d26500807ea6f773e",
-  "size": 1126400,
+  "version": "0.1.2",
+  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.2/FlightDeckManager-Setup.exe",
+  "sha256": "080935812e84b01c2a6a11afe7b42c1f970b92b52e7c47ccc3c1cda28d1d7daf",
+  "size": 1132544,
   "notes": [
-   "The first public release."
+   "Take over: an app installed by hand (before the Manager) can be handed to the Manager, which then updates it. Its settings and data stay where they are, and the copy installed by hand is kept as a backup."
   ]
  },
  "apps": [
