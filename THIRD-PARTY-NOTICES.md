@@ -4,7 +4,7 @@ Flight Deck Suite is built with, and on, the work of other people and projects. 
 keeps its own licence; the links lead to the authoritative text. Each app also lists its credits in its own About
 page, and each release's package includes the notices for the files it ships.
 
-## Logbook, Playback, Hangar
+## Logbook (with Playback and Hangar)
 
 | Component or data | Used for | Licence | Link |
 |---|---|---|---|
