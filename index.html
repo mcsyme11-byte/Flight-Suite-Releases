@@ -309,7 +309,7 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step ol>li::before{content:counter(s);width:26px;height:26px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:13px}
 .step ol>li b,.step p b{color:var(--ink);font-weight:400}
 .step .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
-.step code{font:13px var(--mono);color:var(--ink2);word-break:break-all}
+.step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
 .tip svg{color:var(--brass);margin-top:2px}
@@ -356,6 +356,10 @@ section.doc{padding:0;scroll-margin-top:84px}
 @media (max-width:520px){.btn.big{white-space:normal;width:100%;justify-content:flex-start;padding:10px 18px}.btn.big .t b{letter-spacing:.12em}}
 @media (max-width:420px){.step .ui{white-space:normal}}
 .step .ui{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.part{margin-top:56px;padding-top:30px;border-top:1px solid var(--brass-dim);scroll-margin-top:84px}
+.part h2{margin-top:6px}
+.part .lead{margin-top:10px}
+@media (max-width:389px){.top .dl .tx{display:none}.top .dl{padding:6px 10px}.top .wrap{gap:12px}}
 </style>
 </head>
 <body>
@@ -364,7 +368,7 @@ section.doc{padding:0;scroll-margin-top:84px}
   <div class="wrap">
     <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#emblem"/></svg><span>Flight Deck Suite</span></a>
     <nav class="links" aria-label="Pages"><a href="index.html#apps" aria-current="page">The apps</a><a href="before-you-start.html">Before you start</a><a href="index.html#install">Installing</a><a href="downloads.html">Downloads</a><a href="index.html#support">Support</a></nav>
-    <a class="btn sm dl" href="index.html#get"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg>Download</a>
+    <a class="btn sm dl" href="index.html#get" aria-label="Download"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg><span class="tx">Download</span></a>
   </div>
 </header>
 
@@ -421,7 +425,7 @@ section.doc{padding:0;scroll-margin-top:84px}
             <li>A logbook site on the PC: flights, a world route map, career, VATSIM events</li>
             <li>Share my flight: a live page for friends and family</li>
           </ul>
-          <div class="needs"><span>Needs <a href="before-you-start.html#msfs">MSFS 2024</a> · Share my flight uses <a href="before-you-start.html#tailscale">Tailscale</a></span></div>
+          <div class="needs"><span>Needs <a href="before-you-start.html#msfs">MSFS 2024</a> · Share my flight uses <a href="before-you-start.html#share-live">Tailscale</a> and, for the always-on page, <a href="before-you-start.html#share-always">GitHub</a></span></div>
         </article>
         <article class="app">
           <div class="hd"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-play"/></svg></span><span class="nm">Playback</span><span class="tag inc">With Logbook</span></div>
@@ -494,7 +498,7 @@ section.doc{padding:0;scroll-margin-top:84px}
 
   <section id="before">
     <div class="wrap">
-      <div class="shead"><span class="eyebrow">Before you start</span><h2>What to have ready.</h2><p class="lead">Each app needs a few free programs that are made by other people. Install the ones for the apps you want first; the guide walks through each one, step by step.</p></div>
+      <div class="shead"><span class="eyebrow">Before you start</span><h2>What to have ready.</h2><p class="lead">Each app needs a few free programs and accounts made by other people. Get the ones for the apps you want first; the guide walks through each one, and then through setting up each app, step by step.</p></div>
       <div class="need">
         <a class="it" href="before-you-start.html#msfs"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-plane-o"/></svg></span><span><b>Microsoft Flight Simulator 2024</b><span class="s">every app · Steam or Microsoft Store</span></span><span class="req r">Needed</span></a>
         <a class="it" href="before-you-start.html#vatsim"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-user"/></svg></span><span><b>A VATSIM account</b><span class="s">Squawk, and flying online · free</span></span><span class="req r">Squawk</span></a>
@@ -504,8 +508,10 @@ section.doc{padding:0;scroll-margin-top:84px}
         <a class="it" href="before-you-start.html#webview2"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-window"/></svg></span><span><b>Microsoft Edge WebView2</b><span class="s">already in Windows 11 · the Manager adds it if missing</span></span><span class="req a">Automatic</span></a>
         <a class="it" href="before-you-start.html#obs"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-video"/></svg></span><span><b>OBS Studio</b><span class="s">Playback's video clips · free</span></span><span class="req o">Optional</span></a>
         <a class="it" href="before-you-start.html#gsx"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-gate"/></svg></span><span><b>GSX's Remote Control Server</b><span class="s">only if you use GSX: keeps your gate clear in Ramp</span></span><span class="req o">Optional</span></a>
+        <a class="it" href="before-you-start.html#simbrief"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-route"/></svg></span><span><b>A SimBrief account</b><span class="s">your flight plan in Logbook, Squawk and Ramp · free</span></span><span class="req o">Recommended</span></a>
+        <a class="it" href="before-you-start.html#github"><span class="ring"><svg class="i" viewBox="0 0 24 24"><use href="#i-globe"/></svg></span><span><b>A GitHub account</b><span class="s">Share my flight's always-on page · free</span></span><span class="req o">Optional</span></a>
       </div>
-      <div class="morelink"><a class="btn" href="before-you-start.html">Read the step-by-step guide</a><span>Only Microsoft Flight Simulator is needed by every app.</span></div>
+      <div class="morelink"><a class="btn" href="before-you-start.html">Read the step-by-step guide</a><span>Part 1 gets these ready; Part 2 sets up each app once it's installed. Only Microsoft Flight Simulator is needed by every app.</span></div>
     </div>
   </section>
 
@@ -571,6 +577,7 @@ section.doc{padding:0;scroll-margin-top:84px}
           <li>For Squawk: a VATSIM account, vPilot, an iPhone or iPad, and Tailscale (free)</li>
           <li>For Ramp: FSLTL Base Models (free)</li>
           <li>For Playback's video clips: OBS Studio (optional)</li>
+          <li>Recommended: a SimBrief account; for Share my flight's always-on page, a GitHub account (both free)</li>
           <li>An internet connection to download and update the apps</li>
         </ul>
       </div>
@@ -625,6 +632,8 @@ section.doc{padding:0;scroll-margin-top:84px}
     <g id="i-link"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g>
     <g id="i-window"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M3.5 8.5h17"/><path d="M6.5 6.5h.5M9 6.5h.5"/></g>
     <g id="i-video"><rect x="3" y="6.5" width="12.5" height="11" rx="1.5"/><path d="M15.5 10.5l5.5-3v9l-5.5-3"/></g>
+    <g id="i-route"><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="5.5" r="2"/><path d="M7.5 18.5h7a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6h7"/></g>
+    <g id="i-globe"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9s1.2-6.4 3.7-9z"/></g>
     <g id="i-gate"><path d="M3 20V9h8v11"/><path d="M11 12h6.5l3 2.5"/><path d="M3 20h18"/><path d="M6 12h2"/></g>
   </defs>
 </svg>

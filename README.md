@@ -54,11 +54,12 @@
 - For Squawk: a VATSIM account, vPilot, an iPhone or iPad, and Tailscale (free for personal use)
 - For Ramp: FSLTL Base Models (free)
 - For Playback's video clips: OBS Studio (optional)
+- Recommended: a SimBrief account; for Share my flight's always-on page, a GitHub account (both free)
 - An internet connection to download and update the apps
 
 ## Before you start
 
-The apps work alongside a few free programs made by other people. The [Before you start](https://mcsyme11-byte.github.io/Flight-Suite-Releases/before-you-start.html) guide explains, step by step, how to get each one from its official website:
+The apps work alongside a few free programs made by other people. The [Before you start](https://mcsyme11-byte.github.io/Flight-Suite-Releases/before-you-start.html) guide explains, step by step, how to get each one from its official website (Part 1), and then how to set up each app once it's installed (Part 2: Logbook's first start, Squawk on the phone, and Share my flight's live link and always-on page):
 
 | What | For | Official website |
 |---|---|---|
@@ -70,6 +71,8 @@ The apps work alongside a few free programs made by other people. The [Before yo
 | Microsoft Edge WebView2 | Ramp and the Manager (added by the Manager if missing) | [Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/) |
 | OBS Studio (optional) | Playback's video clips | [obsproject.com](https://obsproject.com/download) |
 | GSX's Remote Control Server (optional) | Ramp, if you use GSX | in GSX's settings |
+| A SimBrief account (recommended) | your flight plan in Logbook, Squawk and Ramp | [simbrief.com](https://www.simbrief.com/) |
+| A GitHub account (optional) | Share my flight's always-on page | [github.com/signup](https://github.com/signup) |
 
 ## Installation
 

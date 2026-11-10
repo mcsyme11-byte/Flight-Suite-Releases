@@ -309,7 +309,7 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step ol>li::before{content:counter(s);width:26px;height:26px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:13px}
 .step ol>li b,.step p b{color:var(--ink);font-weight:400}
 .step .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
-.step code{font:13px var(--mono);color:var(--ink2);word-break:break-all}
+.step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
 .tip svg{color:var(--brass);margin-top:2px}
@@ -356,6 +356,10 @@ section.doc{padding:0;scroll-margin-top:84px}
 @media (max-width:520px){.btn.big{white-space:normal;width:100%;justify-content:flex-start;padding:10px 18px}.btn.big .t b{letter-spacing:.12em}}
 @media (max-width:420px){.step .ui{white-space:normal}}
 .step .ui{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.part{margin-top:56px;padding-top:30px;border-top:1px solid var(--brass-dim);scroll-margin-top:84px}
+.part h2{margin-top:6px}
+.part .lead{margin-top:10px}
+@media (max-width:389px){.top .dl .tx{display:none}.top .dl{padding:6px 10px}.top .wrap{gap:12px}}
 </style>
 </head>
 <body>
@@ -364,7 +368,7 @@ section.doc{padding:0;scroll-margin-top:84px}
   <div class="wrap">
     <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#emblem"/></svg><span>Flight Deck Suite</span></a>
     <nav class="links" aria-label="Pages"><a href="index.html#apps">The apps</a><a href="before-you-start.html" aria-current="page">Before you start</a><a href="index.html#install">Installing</a><a href="downloads.html">Downloads</a><a href="index.html#support">Support</a></nav>
-    <a class="btn sm dl" href="index.html#get"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg>Download</a>
+    <a class="btn sm dl" href="index.html#get" aria-label="Download"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg><span class="tx">Download</span></a>
   </div>
 </header>
 
@@ -373,7 +377,7 @@ section.doc{padding:0;scroll-margin-top:84px}
     <a class="back" href="index.html">‹ Flight Deck Suite</a>
     <span class="eyebrow" style="display:block">Before you start</span>
     <h2 style="margin-top:6px">Everything the apps need, step by step.</h2>
-    <p class="lead">The suite's apps work alongside a few free programs made by other people. You only need the ones for the apps you plan to use: the table shows which. Each program comes from its own official website, linked below.</p>
+    <p class="lead">The suite's apps work alongside a few free programs and accounts made by other people. <b style="font-weight:400;color:var(--ink)">Part 1</b> gets them ready before you install anything. <b style="font-weight:400;color:var(--ink)">Part 2</b> sets up each app once it's installed. You only need the steps for the apps you plan to use: the table shows which.</p>
 
     <table class="which">
       <thead><tr><th>What</th><th>For</th><th>Needed?</th><th>Cost</th></tr></thead>
@@ -386,9 +390,14 @@ section.doc{padding:0;scroll-margin-top:84px}
         <tr><td><a href="#webview2">Microsoft Edge WebView2</a></td><td data-k="For">Ramp and the Manager's window</td><td data-k="Needed?"><span class="dot" style="background:var(--green)"></span>Added by the Manager</td><td data-k="Cost">free</td></tr>
         <tr><td><a href="#obs">OBS Studio</a></td><td data-k="For">Playback's video clips</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">free</td></tr>
         <tr><td><a href="#gsx">GSX's Remote Control Server</a></td><td data-k="For">Ramp, if you use GSX</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">part of GSX</td></tr>
+        <tr><td><a href="#simbrief">A SimBrief account</a></td><td data-k="For">Logbook, Squawk and Ramp: your flight plan</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Recommended</td><td data-k="Cost">free</td></tr>
+        <tr><td><a href="#github">A GitHub account</a></td><td data-k="For">Share my flight's always-on page</td><td data-k="Needed?"><span class="dot" style="background:var(--muted)"></span>Optional</td><td data-k="Cost">free</td></tr>
       </tbody>
     </table>
     <div class="tip" style="margin-top:22px;max-width:none;border-left-color:var(--brass-dim)"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>Using only Logbook? Microsoft Flight Simulator 2024 is all you need. Flight Deck Manager also checks your PC before it installs an app, and links to anything still missing.</div></div>
+    <nav class="toc" aria-label="Steps"><a href="#msfs">1 · MSFS 2024</a><a href="#vatsim">2 · VATSIM</a><a href="#vpilot">3 · vPilot</a><a href="#tailscale">4 · Tailscale</a><a href="#fsltl">5 · FSLTL</a><a href="#webview2">6 · WebView2</a><a href="#obs">7 · OBS Studio</a><a href="#gsx">8 · GSX</a><a href="#simbrief">9 · SimBrief</a><a href="#github">10 · GitHub</a><a href="#after">Part 2 · After you install</a></nav>
+
+    <div class="part" id="part1"><span class="eyebrow">Part 1</span><h2>Before you install</h2></div>
 
     <!-- 1 -->
     <article class="step" id="msfs">
@@ -454,7 +463,7 @@ section.doc{padding:0;scroll-margin-top:84px}
         <li><div><b>Make sure MagicDNS is on.</b> Then, under <span class="ui">HTTPS Certificates</span>, select <span class="ui">Enable HTTPS</span> and confirm.</div></li>
       </ol>
       <div class="tip warn"><svg class="i" viewBox="0 0 24 24"><use href="#i-warn"/></svg><div>Turning on HTTPS lists your devices' names and your network's name in a public record of certificates. Give your PC a name you're happy for others to see: Tailscale's admin console › <span class="ui">Machines</span> › the PC's <span class="ui">…</span> menu › <span class="ui">Edit machine name</span>. Tailscale's own guide: <a href="https://tailscale.com/kb/1153/enabling-https" target="_blank" rel="noopener">Enabling HTTPS</a>.</div></div>
-      <div class="ok"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Once Squawk is installed, the Manager shows the address to open on your phone. Open it in Safari, then select <span class="ui">Share</span> › <span class="ui">Add to Home Screen</span> so Squawk opens like an app.</span></div>
+      <div class="ok"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>That's all for now. Putting Squawk on your phone comes after it's installed: see <a href="#squawk-phone">Part 2</a>.</span></div>
     </article>
 
     <!-- 5 -->
@@ -470,7 +479,7 @@ section.doc{padding:0;scroll-margin-top:84px}
           <br><code>Microsoft Store: %LOCALAPPDATA%\Packages\Microsoft.Limitless_8wekyb3d8bbwe\LocalCache\Packages\Community</code></div></li>
         <li><div><b>Install the Base Models.</b> Select <span class="ui">FSLTL</span> in the installer's list, choose <span class="ui">FSLTL Base Models</span> and select <span class="ui">Install</span>. Let it finish before closing the installer.</div></li>
       </ol>
-      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>Not sure where your Community folder is? Logbook's Hangar page shows it, and Ramp's Settings show whether FSLTL was found. FSLTL's own guide: <a href="https://www.fslivetrafficliveries.com/installation/" target="_blank" rel="noopener">FSLTL installation</a>.</div></div>
+      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>If you chose your own folder when you installed the sim, the Community folder is inside the folder you chose. FSLTL's own guide: <a href="https://www.fslivetrafficliveries.com/installation/" target="_blank" rel="noopener">FSLTL installation</a>.</div></div>
     </article>
 
     <!-- 6 -->
@@ -509,11 +518,136 @@ section.doc{padding:0;scroll-margin-top:84px}
       </ol>
     </article>
 
+    <!-- 9 -->
+    <article class="step" id="simbrief">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-route"/></svg></span><div class="w"><span class="num">Step 9 · recommended</span><h2>A SimBrief account</h2></div></div>
+      <div class="for"><span><b>Used by</b> Logbook (plan against actual, arrival time zone), Squawk (your route on the map, arrival time, top of descent) and Ramp (your arrival airport)</span><span><b>Cost</b> free</span><span><b>Time</b> about 5 minutes</span></div>
+      <p>SimBrief makes realistic flight plans. When the apps know your SimBrief username, they read your latest plan from SimBrief. Without it, everything else still works.</p>
+      <ol>
+        <li><div><b>Sign up</b> at <a href="https://www.simbrief.com/" target="_blank" rel="noopener">simbrief.com</a>. SimBrief is part of Navigraph, so signing up makes a free Navigraph account; no subscription is needed.</div></li>
+        <li><div><b>Find your username:</b> open SimBrief's <a href="https://www.simbrief.com/system/profile.php#settings" target="_blank" rel="noopener">Account Settings</a> and, under <span class="ui">Your Navigraph Account</span>, note the <span class="ui">Alias (Username)</span>. That's the name the apps need (not your email address, and not your Pilot ID).</div></li>
+        <li><div><b>Plan each flight in SimBrief</b> as usual. The apps always read the latest plan you made.</div></li>
+      </ol>
+      <div class="ok"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>Where to enter the username comes in <a href="#logbook-first">Part 2</a>.</span></div>
+    </article>
+
+    <!-- 10 -->
+    <article class="step" id="github">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-globe"/></svg></span><div class="w"><span class="num">Step 10 · optional</span><h2>A GitHub account</h2></div></div>
+      <div class="for"><span><b>Used by</b> Share my flight's always-on page (works even with your PC off)</span><span><b>Cost</b> free</span><span><b>Time</b> about 5 minutes</span></div>
+      <p>Share my flight gives friends and family a live page of your flight. With a free GitHub account, Logbook also keeps a copy of it online that stays up when your PC is off. Skip this step if you don't want the always-on page.</p>
+      <ol>
+        <li><div><b>Sign up</b> at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a> with your email address and a password.</div></li>
+        <li><div><b>Choose your username with care:</b> it becomes part of your page's address, for example <code>your-name.github.io/flight</code>.</div></li>
+        <li><div><b>Verify your email address</b> with the code GitHub sends you.</div></li>
+      </ol>
+      <div class="ok"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>The rest (a page and a key for Logbook) comes in <a href="#share-always">Part 2</a>.</span></div>
+    </article>
+
     <div class="card" style="margin-top:22px;text-align:center;padding:34px 22px">
-      <span class="eyebrow" style="display:block;margin-bottom:10px">All set</span>
-      <h2 style="margin:0 0 18px">Next: Flight Deck Manager.</h2>
+      <span class="eyebrow" style="display:block;margin-bottom:10px">Part 1 done</span>
+      <h2 style="margin:0 0 18px">Next: install Flight Deck Manager.</h2>
       <div class="cta" style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px"><span class="btn primary big soon" aria-disabled="true"><svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg><span class="t"><b>First release coming soon</b><small>Flight Deck Manager · Windows 10 and 11 · free</small></span></span><a class="btn big" href="index.html#install"><span class="t"><b>How to install it</b><small>three steps</small></span></a></div>
     </div>
+
+    <div class="part" id="after"><span class="eyebrow">Part 2</span><h2>After you install</h2><p class="lead">Once Flight Deck Manager has installed your apps, set each one up here. Skip the apps you didn't install.</p></div>
+
+    <!-- A -->
+    <article class="step" id="logbook-first">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Part 2 · Logbook</span><h2>Logbook's first start</h2></div></div>
+      <div class="for"><span><b>Time</b> about 2 minutes</span></div>
+      <ol>
+        <li><div><b>Open Logbook</b> from Flight Deck Manager (<span class="ui">Open</span>) or the Start menu. Its logbook site opens in your browser.</div></li>
+        <li><div><b>Add your SimBrief username:</b> in Logbook's <span class="ui">Settings</span>, enter it under <span class="ui">SimBrief username</span>. Ramp reads it from there too.</div></li>
+        <li><div><b>Fly.</b> Logbook notices the sim by itself and logs each flight, with nothing to press. Playback and Hangar are pages of the same site.</div></li>
+      </ol>
+      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>To have Logbook open by itself whenever the sim starts, switch on <span class="ui">Start with MSFS</span> for Logbook in Flight Deck Manager (with the sim closed).</div></div>
+    </article>
+
+    <!-- B -->
+    <article class="step" id="squawk-phone">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-phone"/></svg></span><div class="w"><span class="num">Part 2 · Squawk</span><h2>Squawk on your iPhone or iPad</h2></div></div>
+      <div class="for"><span><b>Needs</b> Steps 2 to 4 done, with Tailscale signed in on the PC and the phone</span><span><b>Time</b> about 5 minutes</span></div>
+      <h3>Open Squawk on the phone</h3>
+      <ol>
+        <li><div><b>Start vPilot</b> on the PC. Squawk starts with it.</div></li>
+        <li><div><b>Find your PC's name in Tailscale:</b> open the Tailscale app on the phone; your PC is in the list of devices.</div></li>
+        <li><div><b>Open Safari on the phone</b> and go to <code>http://</code> + your PC's name + <code>:8765</code>, for example <code>http://my-sim-pc:8765</code>. Squawk opens.</div></li>
+      </ol>
+      <h3>Make the secure link and put Squawk on the Home Screen</h3>
+      <ol>
+        <li><div><b>In Squawk, open <span class="ui">Settings</span> › <span class="ui">Notifications</span> and select <span class="ui">Set up secure link</span>.</b> This uses the HTTPS you turned on in Step 4. If Squawk asks for anything more, follow its message, then try again.</div></li>
+        <li><div><b>Select the <span class="ui">Open</span> button</b> with your secure address (it starts with <code>https://</code> and ends with <code>.ts.net</code>).</div></li>
+        <li><div><b>Put Squawk on the Home Screen:</b> in Safari, select <span class="ui">Share</span>, then <span class="ui">Add to Home Screen</span>, then <span class="ui">Add</span>.</div></li>
+        <li><div><b>From now on, open Squawk from its Home Screen icon.</b></div></li>
+      </ol>
+      <h3>Turn on alerts and your plan</h3>
+      <ol>
+        <li><div><b>Notifications:</b> in Squawk (opened from the Home Screen), <span class="ui">Settings</span> › <span class="ui">Notifications</span> › <span class="ui">Turn on notifications</span>, then <span class="ui">Allow</span>. iPhone notifications need iOS 16.4 or later. <span class="ui">Send a test</span> checks they arrive.</div></li>
+        <li><div><b>SimBrief:</b> in Squawk's <span class="ui">Settings</span>, enter your SimBrief username so the map follows your filed route.</div></li>
+      </ol>
+      <div class="tip warn"><svg class="i" viewBox="0 0 24 24"><use href="#i-warn"/></svg><div>If you said no to notifications by mistake, turn them back on in the iPhone's <span class="ui">Settings</span> › <span class="ui">Notifications</span>, then reopen Squawk.</div></div>
+    </article>
+
+    <!-- C -->
+    <article class="step" id="share-live">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-link"/></svg></span><div class="w"><span class="num">Part 2 · Logbook · optional</span><h2>Share my flight: your live link</h2></div></div>
+      <div class="for"><span><b>Needs</b> Logbook, and Tailscale on the PC (Step 4)</span><span><b>Time</b> about 5 minutes</span></div>
+      <p>A public, read-only page of your flight for friends and family: where you are, your route and your last landing. Nobody can change anything on it.</p>
+      <ol>
+        <li><div><b>In Logbook, open <span class="ui">Settings</span> › <span class="ui">Share page</span></b> and switch on <span class="ui">Share my flight</span>.</div></li>
+        <li><div><b>Logbook asks Tailscale to publish your link.</b> If it shows <span class="ui">Approve</span>, select <span class="ui">Open Tailscale</span>, approve the public link for this PC (Tailscale calls this Funnel) and come back to select <span class="ui">Try again</span>.</div></li>
+        <li><div><b>If it shows <span class="ui">Admin</span>,</b> Windows needs administrator rights once: right-click the Start button, choose <span class="ui">Terminal (Admin)</span> (on Windows 10, <span class="ui">Windows PowerShell (Admin)</span>), paste the line Logbook shows, press Enter, then select <span class="ui">Try again</span>.</div></li>
+        <li><div><b>When it shows <span class="ui">Live</span>,</b> select <span class="ui">Copy link</span> and send it to whoever you like.</div></li>
+      </ol>
+      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>The live link works while your PC and Logbook are on. For a page that stays up with the PC off, add the always-on page below. You choose which parts of your career show on the page, under <span class="ui">Show my career</span>.</div></div>
+    </article>
+
+    <!-- D -->
+    <article class="step" id="share-always">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-globe"/></svg></span><div class="w"><span class="num">Part 2 · Logbook · optional</span><h2>Share my flight: the always-on page</h2></div></div>
+      <div class="for"><span><b>Needs</b> the live link above, and a GitHub account (Step 10)</span><span><b>Time</b> about 10 minutes, once</span></div>
+      <p>Logbook uploads a copy of your share page to GitHub Pages, GitHub's free website hosting, so it stays up with your PC off. It takes three things on GitHub: a repository (a folder for the page), its Pages switched on, and a key that lets Logbook upload to that one repository only.</p>
+      <h3>1 · Make the repository</h3>
+      <ol>
+        <li><div><b>Sign in to GitHub</b> and open <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a> (or the <span class="ui">+</span> menu at the top right › <span class="ui">New repository</span>).</div></li>
+        <li><div><b>Repository name:</b> a short name, for example <code>flight</code>. It becomes the end of your page's address.</div></li>
+        <li><div><b>Choose <span class="ui">Public</span>,</b> and turn on the option to <b>add a README</b>.</div></li>
+        <li><div><b>Select <span class="ui">Create repository</span>.</b></div></li>
+      </ol>
+      <h3>2 · Switch on its Pages</h3>
+      <ol>
+        <li><div><b>In the new repository, open <span class="ui">Settings</span> › <span class="ui">Pages</span></b> (in the list on the left).</div></li>
+        <li><div><b>Under <span class="ui">Build and deployment</span>:</b> Source <span class="ui">Deploy from a branch</span>; Branch <span class="ui">main</span> and <span class="ui">/ (root)</span>; then <span class="ui">Save</span>.</div></li>
+      </ol>
+      <h3>3 · Make the key</h3>
+      <ol>
+        <li><div><b>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub's new fine-grained token page</a></b> (or your picture at the top right › <span class="ui">Settings</span> › <span class="ui">Developer settings</span> › <span class="ui">Personal access tokens</span> › <span class="ui">Fine-grained tokens</span> › <span class="ui">Generate new token</span>).</div></li>
+        <li><div><b>Token name:</b> for example <code>Flight Deck Suite share page</code>.</div></li>
+        <li><div><b>Expiration:</b> choose <span class="ui">No expiration</span>, or the longest time offered. When a key expires, uploads stop until you make a new one and paste it into Logbook.</div></li>
+        <li><div><b>Repository access:</b> choose <span class="ui">Only select repositories</span>, then pick the repository you just made.</div></li>
+        <li><div><b>Permissions:</b> under the repository permissions, set <span class="ui">Contents</span> to <span class="ui">Read and write</span>. Leave everything else as it is.</div></li>
+        <li><div><b>Select <span class="ui">Generate token</span>,</b> then copy the key straight away (it starts with <code>github_pat_</code>). GitHub shows it only once.</div></li>
+      </ol>
+      <h3>4 · Give it to Logbook</h3>
+      <ol>
+        <li><div><b>In Logbook, <span class="ui">Settings</span> › <span class="ui">Share page</span> › <span class="ui">Set up your always-on page</span> › <span class="ui">Set it up</span>.</b></div></li>
+        <li><div><b>Repository:</b> your username and the repository's name, for example <code>your-name/flight</code>. <b>Key:</b> paste the key.</div></li>
+        <li><div><b>Select <span class="ui">Save</span>.</b> Logbook checks both with GitHub and tells you if anything is wrong. The key is kept on your PC, encrypted, and is never shown again.</div></li>
+        <li><div><b>The first upload</b> takes a few minutes. Your link then points to the always-on page, for example <code>your-name.github.io/flight</code>.</div></li>
+      </ol>
+      <div class="tip warn"><svg class="i" viewBox="0 0 24 24"><use href="#i-warn"/></svg><div>Treat the key like a password: never post it or send it to anyone. If it's ever shared by mistake, delete it on GitHub's token page and make a new one.</div></div>
+    </article>
+
+    <!-- E -->
+    <article class="step" id="others">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="w"><span class="num">Part 2 · the rest</span><h2>Ramp and Playback</h2></div></div>
+      <ol>
+        <li><div><b>Ramp</b> needs nothing more: with FSLTL installed (Step 5) it fills the empty stands by itself when you're at an airport. If you use GSX, Step 8 lets it keep your gate clear.</div></li>
+        <li><div><b>Playback</b> needs nothing more for replays and screenshots. For video clips, have OBS Studio open (Step 7) when you play a landing back.</div></li>
+      </ol>
+      <div class="ok"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg><span>That's everything. Questions or problems: <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a>.</span></div>
+    </article>
   </div>
 </main>
 
@@ -551,6 +685,8 @@ section.doc{padding:0;scroll-margin-top:84px}
     <g id="i-link"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g>
     <g id="i-window"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M3.5 8.5h17"/><path d="M6.5 6.5h.5M9 6.5h.5"/></g>
     <g id="i-video"><rect x="3" y="6.5" width="12.5" height="11" rx="1.5"/><path d="M15.5 10.5l5.5-3v9l-5.5-3"/></g>
+    <g id="i-route"><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="5.5" r="2"/><path d="M7.5 18.5h7a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6h7"/></g>
+    <g id="i-globe"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9s1.2-6.4 3.7-9z"/></g>
     <g id="i-gate"><path d="M3 20V9h8v11"/><path d="M11 12h6.5l3 2.5"/><path d="M3 20h18"/><path d="M6 12h2"/></g>
   </defs>
 </svg>

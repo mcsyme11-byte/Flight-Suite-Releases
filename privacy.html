@@ -309,7 +309,7 @@ footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5p
 .step ol>li::before{content:counter(s);width:26px;height:26px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:13px}
 .step ol>li b,.step p b{color:var(--ink);font-weight:400}
 .step .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
-.step code{font:13px var(--mono);color:var(--ink2);word-break:break-all}
+.step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
 .tip svg{color:var(--brass);margin-top:2px}
@@ -356,6 +356,10 @@ section.doc{padding:0;scroll-margin-top:84px}
 @media (max-width:520px){.btn.big{white-space:normal;width:100%;justify-content:flex-start;padding:10px 18px}.btn.big .t b{letter-spacing:.12em}}
 @media (max-width:420px){.step .ui{white-space:normal}}
 .step .ui{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.part{margin-top:56px;padding-top:30px;border-top:1px solid var(--brass-dim);scroll-margin-top:84px}
+.part h2{margin-top:6px}
+.part .lead{margin-top:10px}
+@media (max-width:389px){.top .dl .tx{display:none}.top .dl{padding:6px 10px}.top .wrap{gap:12px}}
 </style>
 </head>
 <body>
@@ -364,7 +368,7 @@ section.doc{padding:0;scroll-margin-top:84px}
   <div class="wrap">
     <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#emblem"/></svg><span>Flight Deck Suite</span></a>
     <nav class="links" aria-label="Pages"><a href="index.html#apps">The apps</a><a href="before-you-start.html">Before you start</a><a href="index.html#install">Installing</a><a href="downloads.html">Downloads</a><a href="index.html#support">Support</a></nav>
-    <a class="btn sm dl" href="index.html#get"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg>Download</a>
+    <a class="btn sm dl" href="index.html#get" aria-label="Download"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg><span class="tx">Download</span></a>
   </div>
 </header>
 
@@ -427,6 +431,8 @@ section.doc{padding:0;scroll-margin-top:84px}
     <g id="i-link"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g>
     <g id="i-window"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M3.5 8.5h17"/><path d="M6.5 6.5h.5M9 6.5h.5"/></g>
     <g id="i-video"><rect x="3" y="6.5" width="12.5" height="11" rx="1.5"/><path d="M15.5 10.5l5.5-3v9l-5.5-3"/></g>
+    <g id="i-route"><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="5.5" r="2"/><path d="M7.5 18.5h7a3 3 0 0 0 0-6h-5a3 3 0 0 1 0-6h7"/></g>
+    <g id="i-globe"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9s1.2-6.4 3.7-9z"/></g>
     <g id="i-gate"><path d="M3 20V9h8v11"/><path d="M11 12h6.5l3 2.5"/><path d="M3 20h18"/><path d="M6 12h2"/></g>
   </defs>
 </svg>
