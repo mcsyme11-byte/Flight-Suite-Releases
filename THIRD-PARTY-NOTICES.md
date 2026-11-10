@@ -10,7 +10,6 @@ page, and each release's package includes the notices for the files it ships.
 |---|---|---|---|
 | Python | the language Logbook runs in | Python Software Foundation License | <https://www.python.org/> |
 | PyInstaller | packs Logbook into one program | GPL-2.0, with its bootloader exception | <https://pyinstaller.org/> |
-| Python-SimConnect | reading flight data from the sim | AGPL-3.0 | <https://github.com/odwdinc/Python-SimConnect> |
 | Microsoft SimConnect | the sim's own interface | Microsoft Flight Simulator SDK terms, © Microsoft Corporation | <https://docs.flightsimulator.com/> |
 | OurAirports | airports and runways | public domain | <https://ourairports.com/> |
 | Natural Earth | the map | public domain | <https://www.naturalearthdata.com/> |
