@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manual downloads · Flight Deck Suite</title>
+<meta name="description" content="Each Flight Deck Suite app on its own, for PCs where Flight Deck Manager can't be used.">
+<meta name="author" content="Malcolm Syme">
+<meta name="theme-color" content="#0F1520">
+<meta property="og:title" content="Manual downloads · Flight Deck Suite">
+<meta property="og:description" content="Each Flight Deck Suite app on its own, for PCs where Flight Deck Manager can't be used.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mcsyme11-byte.github.io/Flight-Suite-Releases/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='18.5' fill='%230F1520' stroke='%23C0A062' stroke-width='2'/%3E%3Cpath d='M20 8L22.8 17.2 32 20 22.8 22.8 20 32 17.2 22.8 8 20 17.2 17.2Z' fill='%23C0A062'/%3E%3C/svg%3E">
+<!-- Flight Deck Suite · © 2026 Malcolm Syme · mcsyme11@gmail.com · built by public-release/site/build_site.py in the private source repository -->
+<style>
+/* Flight Deck Suite website (Flight-Suite-Releases, GitHub Pages). Approved as a mock-up Nov 10, 2026
+   (public-release/mockups/website). Look: docs/DESIGN.md. Malcolm Syme · mcsyme11@gmail.com */
+:root{
+  --bg:#141B26;--bg2:#0F1520;--deep:#0C1119;--card:#1A2333;--line:#2A3446;--line2:#3A465C;
+  --brass:#C0A062;--brass-dim:#7E6A45;--brass-hi:#E2C88E;
+  --ink:#EDE6D3;--ink2:#B4AFA2;--muted:#98A0AB;--faint:#5E6775;
+  --green:#8FB996;--red:#C9675A;--amber:#D1A956;--blue:#8AA9C9;
+  --serif:Georgia,"Palatino Linotype",Palatino,"Book Antiqua",serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sys:-apple-system,"Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:16px/1.55 var(--serif);font-variant-numeric:lining-nums tabular-nums;-webkit-text-size-adjust:100%;
+  background:radial-gradient(900px 480px at 50% -180px,rgba(192,160,98,.10),transparent 70%),var(--bg)}
+::selection{background:rgba(192,160,98,.35)}
+a{color:var(--brass)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (max-width:520px){.wrap{padding:0 16px}}
+
+
+/* top bar */
+.top{position:sticky;top:0;z-index:30;background:rgba(15,21,32,.96);border-bottom:1px solid var(--brass-dim)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
+.brand svg{width:30px;height:30px;flex:none}
+.brand span{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.links{margin-left:auto;display:flex;gap:26px}
+.links a{color:var(--ink2);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;padding:6px 0;border-bottom:1px solid transparent}
+.links a:hover,.links a[aria-current="page"]{color:var(--brass);border-bottom-color:var(--brass)}
+.top .dl{display:none}
+@media (max-width:899px){.links{display:none}.top .dl{display:inline-flex;margin-left:auto}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:9px 18px;border:1px solid var(--brass-dim);border-radius:3px;background:transparent;color:var(--brass);
+  font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;text-align:center;white-space:nowrap}
+.btn:hover{border-color:var(--brass);color:var(--brass-hi)}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:10.5px;letter-spacing:.18em}
+.btn.primary{background:linear-gradient(#CDB27A,#B3935A);border-color:#B3935A;color:var(--bg)}
+.btn.primary:hover{color:var(--bg);background:linear-gradient(#D6BD88,#BC9C62)}
+.btn.big{min-height:62px;padding:10px 26px;gap:14px}
+.btn.big .t{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.btn.big .t b{font-weight:400;font-size:13.5px;letter-spacing:.2em}
+.btn.big .t small{font-size:12px;letter-spacing:0;text-transform:none;font-style:italic;opacity:.85}
+.btn[aria-disabled="true"]{border-color:var(--line2);color:var(--faint);pointer-events:none}
+
+/* sections */
+section{padding:84px 0 0}
+.eyebrow{color:var(--brass);font-size:11px;letter-spacing:.34em;text-transform:uppercase}
+h1{font-weight:400;font-size:58px;line-height:1.08;margin:0;letter-spacing:.005em}
+h2{font-weight:400;font-size:38px;line-height:1.15;margin:6px 0 0}
+h3{font-weight:400;font-size:22px;line-height:1.25;margin:0}
+.lead{color:var(--ink2);font-size:18px;line-height:1.6;max-width:720px;margin:14px 0 0}
+.shead{margin-bottom:34px}
+@media (max-width:759px){h1{font-size:40px}h2{font-size:30px}.lead{font-size:16.5px}section{padding-top:64px}}
+@media (max-width:374px){h1{font-size:34px}h2{font-size:26px}}
+
+/* hero */
+.hero{padding-top:78px;text-align:center}
+.hero .emb{width:76px;height:76px;margin:0 auto 26px;display:block}
+.hero .eyebrow{display:block;margin-bottom:16px}
+.hero h1{max-width:780px;margin:0 auto}
+.hero .lead{margin:20px auto 0;text-align:center}
+.hero .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+.hero .fine{margin-top:16px;color:var(--muted);font-style:italic;font-size:13.5px}
+.hero .fine a{color:var(--ink2)}
+@media (max-width:520px){.hero{padding-top:52px}.hero .cta .btn{width:100%}.hero .btn.big{justify-content:flex-start;white-space:normal;padding:10px 18px}.hero .btn.big .t b{letter-spacing:.12em}}
+
+/* the Manager preview (a drawing of the window, not a screenshot) */
+.shot{margin:56px auto 0;max-width:900px;container-type:inline-size;container-name:shot}
+.win{border:1px solid var(--line2);border-radius:6px;overflow:hidden;background:var(--bg);text-align:left;font-size:14px;line-height:1.4}
+.win .bar{height:30px;background:var(--bg2);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 0 0 12px;color:var(--ink2);font-size:12px}
+.win .bar svg{width:16px;height:16px}
+.win .bar .cb{margin-left:auto;display:flex;color:var(--brass)}
+.win .bar .cb i{width:38px;height:30px;display:grid;place-items:center;font-style:normal;font-size:11px}
+.win .body{display:grid;grid-template-columns:170px minmax(0,1fr)}
+.win .side{background:var(--bg2);border-right:1px solid var(--line);padding:14px 0}
+.win .side .b{display:flex;align-items:center;gap:8px;padding:0 14px 14px;border-bottom:1px solid var(--brass-dim);margin-bottom:8px}
+.win .side .b svg{width:28px;height:28px;flex:none}
+.win .side .b small{display:block;color:var(--brass);font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+.win .side .b span{font-size:15px;white-space:nowrap}
+.win .side .n{display:flex;align-items:center;gap:9px;padding:8px 14px 8px 12px;border-left:2px solid transparent;color:var(--muted);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.win .side .n svg{width:15px;height:15px}
+.win .side .n.on{color:var(--brass);border-left-color:var(--brass);background:rgba(192,160,98,.06)}
+.win .main{padding:16px 18px 18px;min-width:0}
+.win .ph{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--brass-dim);margin-bottom:12px}
+.win .ph small{display:block;color:var(--brass);font-size:9px;letter-spacing:.3em;text-transform:uppercase}
+.win .ph b{font-weight:400;font-size:21px}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;border:1px solid currentColor;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+.pill::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.pill.g{color:var(--green)}.pill.a{color:var(--amber)}.pill.m{color:var(--muted)}.pill.b{color:var(--blue)}
+.win .apps{display:flex;flex-direction:column;gap:8px}
+.win .ar{display:grid;grid-template-columns:34px minmax(0,1fr) auto auto;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:9px 12px}
+.ring{width:34px;height:34px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);flex:none}
+.ring svg{width:18px;height:18px}
+.win .ar .w{min-width:0}
+.win .ar .w b{font-weight:400;font-size:15px;display:block}
+.win .ar .w span{display:block;color:var(--muted);font-style:italic;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win .ar .v{color:var(--ink2);font-size:12px;white-space:nowrap}
+.win .ar .btn{min-height:30px;padding:4px 10px;font-size:9.5px;letter-spacing:.16em;min-width:86px}
+.win .ar.soon{opacity:.7}
+@container shot (max-width:640px){.win .body{grid-template-columns:minmax(0,1fr)}.win .side{display:none}.win .ar{grid-template-columns:34px minmax(0,1fr) auto auto}.win .ar .v{display:none}.win .ar .w span{white-space:normal}}
+@container shot (max-width:400px){.win .ar .pill{display:none}.win .ph .pill{display:none}}
+.shot figcaption{margin-top:12px;color:var(--muted);font-style:italic;font-size:13.5px;text-align:center}
+
+/* strip */
+.strip{margin-top:72px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.strip div{padding:20px 4px;text-align:center;color:var(--brass);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+@media (max-width:899px){.strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:0}.strip div{padding:14px 4px}}
+
+/* app cards */
+.apps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:1023px){.apps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:679px){.apps-grid{grid-template-columns:minmax(0,1fr)}}
+.app{background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:24px 22px 20px;display:flex;flex-direction:column;min-width:0}
+.app .hd{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.app .ring{width:42px;height:42px}.app .ring svg{width:22px;height:22px}
+.app .nm{font-size:23px;line-height:1.1}
+.app .tag{margin-left:auto;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);border:1px solid currentColor;border-radius:3px;padding:3px 8px;white-space:nowrap}
+.app .tag.inc{color:var(--brass)}
+.app .tag.soon{color:var(--blue)}
+.app h3{font-size:19px;margin-bottom:10px}
+.app ul{margin:0;padding:0;list-style:none;color:var(--ink2);font-size:15px;line-height:1.5}
+.app li{position:relative;padding-left:16px;margin-top:6px}
+.app li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border:1px solid var(--brass);transform:rotate(45deg)}
+.app .needs{margin-top:auto;padding-top:16px;color:var(--muted);font-style:italic;font-size:13.5px}
+.app .needs span{display:block;border-top:1px solid var(--line);padding-top:12px}
+.app.soon .nm,.app.soon h3{color:var(--ink2)}
+
+/* landing grades */
+.grades{margin-top:20px;background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:24px 22px}
+.grades .gh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 18px;margin-bottom:16px}
+.grades .gh .s{color:var(--muted);font-style:italic;font-size:14px}
+.gt{width:100%;border-collapse:collapse;font-size:15px}
+.gt th{font-weight:400;color:var(--brass);font-size:10px;letter-spacing:.22em;text-transform:uppercase;text-align:right;padding:0 10px 10px;white-space:nowrap}
+.gt th:first-child,.gt td:first-child{text-align:left;padding-left:0}
+.gt th i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.gt td{border-top:1px solid var(--line);padding:10px 10px;text-align:right;white-space:nowrap}
+.gt td:first-child{white-space:normal}
+.gt td:first-child small{display:block;color:var(--muted);font-style:italic;font-size:12.5px}
+.gt td:last-child,.gt th:last-child{padding-right:0}
+@media (max-width:679px){
+  .gt thead{display:none}
+  .gt,.gt tbody,.gt tr,.gt td{display:block}
+  .gt tr{border-top:1px solid var(--line);padding:12px 0}
+  .gt td{border:0;padding:0;text-align:left}
+  .gt td:first-child{margin-bottom:8px}
+  .gt td.g{display:inline-flex;align-items:center;gap:6px;margin:0 14px 4px 0;font-size:14px}
+  .gt td.g::before{content:attr(data-g);color:var(--muted);font-style:italic;font-size:12.5px}
+  .gt td.g i{width:7px;height:7px;border-radius:50%;display:inline-block}
+}
+@media (min-width:680px){.gt td.g i{display:none}}
+
+/* Manager section */
+.mgr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:44px;align-items:start}
+@media (max-width:1023px){.mgr{grid-template-columns:minmax(0,1fr);gap:36px}}
+.ticks{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.ticks li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;color:var(--ink2)}
+.ticks li svg{width:20px;height:20px;color:var(--brass);margin-top:2px}
+.ticks b{display:block;color:var(--ink);font-weight:400;font-size:17px}
+.mgr .shot{margin:0;max-width:none}
+
+/* installing */
+.inst{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px;align-items:start}
+@media (max-width:899px){.inst{grid-template-columns:minmax(0,1fr);gap:32px}}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+.steps li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:16px;color:var(--ink2)}
+.steps .n{width:32px;height:32px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:15px}
+.steps b{color:var(--ink);font-weight:400}
+.ss{margin:0}
+.ss .box{background:#0067C0;color:#fff;font-family:var(--sys);padding:22px 24px;display:flex;flex-direction:column;gap:12px;border-radius:2px}
+.ss .box .t{font-size:24px;font-weight:300;line-height:1.2}
+.ss .box .p{font-size:13.5px;line-height:1.5}
+.ss .box .mi{font-size:13.5px;text-decoration:underline;outline:2px solid var(--brass-hi);outline-offset:4px;align-self:flex-start}
+.ss .box .bt{display:flex;justify-content:flex-end;gap:10px;margin-top:6px;flex-wrap:wrap}
+.ss .box .bt span{background:#fff;color:#000;font-size:13px;padding:6px 18px;border:1px solid #fff;white-space:nowrap}
+.ss .box .bt span.run{outline:2px solid var(--brass-hi);outline-offset:3px;border-color:#000;box-shadow:inset 0 0 0 1px #fff}
+.ss figcaption{margin-top:12px;color:var(--muted);font-style:italic;font-size:14px}
+
+/* three cards at the foot */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:1023px){.trio{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.trio .card:last-child{grid-column:1 / -1}}
+@media (max-width:679px){.trio{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:24px 22px;min-width:0}
+.card .eyebrow{display:block;margin-bottom:14px;font-size:10.5px;letter-spacing:.28em}
+.card ul{margin:0;padding:0 0 0 18px;color:var(--ink2);font-size:15px}
+.card li+li{margin-top:7px}
+.card p{margin:0;color:var(--ink2);font-size:15px}
+.card p+p{margin-top:10px}
+.card .mail{font-size:17px;color:var(--ink)}
+.soonrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.soonrow span{color:var(--ink2)}
+
+/* footer */
+footer{margin-top:96px;border-top:1px solid var(--line);background:var(--bg2);padding:26px 0 calc(28px + env(safe-area-inset-bottom))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+footer .c{color:var(--ink2);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+footer nav a{color:var(--ink2);font-size:14px}
+footer .dis{flex-basis:100%;color:var(--faint);font-style:italic;font-size:12.5px}
+
+/* manual downloads page */
+.dlhead{padding-top:64px}
+.dlhead .back{display:inline-block;color:var(--brass);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px}
+.notice{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:14px 16px;color:var(--ink2);font-size:15px;margin-top:26px;max-width:820px}
+.notice svg{color:var(--brass);margin-top:2px}
+.pk{background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:22px;margin-top:20px}
+.pk .hd{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pk .hd .w{flex:1 1 220px;min-width:0}
+.pk .hd .w .nm{font-size:23px;line-height:1.15}
+.pk .hd .w .s{color:var(--muted);font-style:italic;font-size:14px}
+.pk .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:18px}
+.pk .meta>div{background:var(--bg2);padding:10px 14px;min-width:0}
+.pk .meta .k{color:var(--brass);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.pk .meta .v{font-size:15.5px;line-height:1.35}
+@media (max-width:679px){.pk .meta{grid-template-columns:repeat(2,minmax(0,1fr))}.pk .hd .btn{width:100%}}
+.pk details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.pk summary{cursor:pointer;color:var(--brass);font-size:11px;letter-spacing:.2em;text-transform:uppercase;list-style:none}
+.pk summary::-webkit-details-marker{display:none}
+.pk summary::before{content:"›";display:inline-block;margin-right:8px;transition:transform .15s}
+.pk details[open] summary::before{transform:rotate(90deg)}
+.pk details ul{margin:10px 0 0;padding-left:18px;color:var(--ink2);font-size:15px}
+.old{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px;table-layout:fixed}
+.old td:nth-child(1){width:22%}.old td:nth-child(2){width:38%}.old td:nth-child(3){width:20%}
+.old td{border-top:1px solid var(--line);padding:9px 10px 9px 0;color:var(--ink2);white-space:nowrap}
+.old td:last-child{text-align:right;padding-right:0}
+.old td a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+@media (max-width:420px){.old td:nth-child(3){display:none}}
+.pk.soon{opacity:.75}
+.ck{margin-top:30px;color:var(--muted);font-style:italic;font-size:14px}
+.ck code{font:13px var(--mono);color:var(--ink2);font-style:normal}
+
+/* ---------- added for the built site (Nov 10, 2026) */
+.skip{position:absolute;left:-9999px;top:8px;background:var(--brass);color:var(--bg);padding:8px 14px;border-radius:3px;z-index:40}
+.skip:focus{left:16px}
+.btn.primary.soon{cursor:default;opacity:.85}
+.btn.primary.soon:hover{color:var(--bg);background:linear-gradient(#CDB27A,#B3935A)}
+.app .needs a,.pk .needs a{color:var(--ink2)}
+.app .needs a:hover{color:var(--brass-hi)}
+.win .prow{display:flex;flex-direction:column;gap:6px;min-width:0}
+.win .prow .ln{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--ink2)}
+.win .prow .ln i{color:var(--muted);white-space:nowrap}
+.win .prow .tr{height:5px;border:1px solid var(--line);background:var(--deep);border-radius:2px;overflow:hidden}
+.win .prow .tr b{display:block;height:100%;width:84%;background:var(--brass)}
+
+/* Before you start (home page summary) */
+.need{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+@media (max-width:759px){.need{grid-template-columns:minmax(0,1fr)}}
+.need a.it{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--card);padding:16px 18px;text-decoration:none;color:var(--ink);min-width:0}
+.need a.it:hover{background:#1E2839}
+.need .it .ring{width:42px;height:42px}
+.need .it b{display:block;font-weight:400;font-size:17px}
+.need .it span.s{display:block;color:var(--muted);font-style:italic;font-size:13.5px}
+.need .it .req{font-size:10px;letter-spacing:.18em;text-transform:uppercase;border:1px solid currentColor;border-radius:3px;padding:3px 8px;white-space:nowrap}
+.need .it .req.r{color:var(--brass)}.need .it .req.o{color:var(--muted)}.need .it .req.a{color:var(--green)}
+@media (max-width:419px){.need a.it{grid-template-columns:42px minmax(0,1fr)}.need .it .req{grid-column:2;justify-self:start}}
+.morelink{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.morelink span{color:var(--muted);font-style:italic;font-size:14px}
+
+/* the setup guide (before-you-start.html) */
+.ghead{padding-top:64px}
+.back{display:inline-block;color:var(--brass);text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:22px}
+.which{width:100%;border-collapse:collapse;font-size:15px;margin-top:30px}
+.which th{font-weight:400;color:var(--brass);font-size:10px;letter-spacing:.22em;text-transform:uppercase;text-align:left;padding:0 12px 10px 0;white-space:nowrap}
+.which td{border-top:1px solid var(--line);padding:11px 12px 11px 0;vertical-align:top;color:var(--ink2)}
+.which td:first-child a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--brass-dim)}
+.which td:first-child a:hover{color:var(--brass-hi)}
+.which .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:1px}
+@media (max-width:679px){
+  .which thead{display:none}.which,.which tbody,.which tr,.which td{display:block}
+  .which tr{border-top:1px solid var(--line);padding:12px 0}.which td{border:0;padding:2px 0}
+  .which td:first-child{font-size:16.5px;margin-bottom:2px}
+  .which td[data-k]::before{content:attr(data-k) " · ";color:var(--muted);font-style:italic;font-size:13px}}
+.step{background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:26px 24px 24px;margin-top:22px;scroll-margin-top:84px}
+@media (max-width:520px){.step{padding:20px 16px}}
+.step .hd{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.step .hd .w{flex:1 1 240px;min-width:0}
+.step .hd .num{color:var(--brass);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
+.step .hd h2{font-size:28px;margin:2px 0 0}
+.step .for{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;color:var(--muted);font-style:italic;font-size:14px}
+.step .for b{font-style:normal;font-weight:400;color:var(--ink2)}
+.step p{color:var(--ink2);margin:14px 0 0}
+.step h3{font-size:12px;color:var(--brass);letter-spacing:.24em;text-transform:uppercase;margin:24px 0 0}
+.step ol{margin:10px 0 0;padding:0;list-style:none;counter-reset:s}
+.step ol>li{counter-increment:s;display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--line);color:var(--ink2)}
+.step ol>li:first-child{border-top:0}
+.step ol>li::before{content:counter(s);width:26px;height:26px;border:1px solid var(--brass-dim);border-radius:50%;display:grid;place-items:center;color:var(--brass);font-size:13px}
+.step ol>li b,.step p b{color:var(--ink);font-weight:400}
+.step .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
+.step code{font:13px var(--mono);color:var(--ink2);word-break:break-all}
+.tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
+.tip.warn{border-left-color:var(--amber)}
+.tip svg{color:var(--brass);margin-top:2px}
+.tip.warn svg{color:var(--amber)}
+.step .ok{display:flex;gap:10px;align-items:flex-start;color:var(--green);font-size:14.5px;margin-top:14px}
+.step .ok svg{margin-top:2px}
+.step .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+@media (max-width:520px){.step .btns .btn{flex:1 1 100%}}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.toc a{display:inline-flex;align-items:center;min-height:36px;padding:6px 12px;border:1px solid var(--line2);border-radius:3px;color:var(--ink2);text-decoration:none;font-size:14px}
+.toc a:hover{border-color:var(--brass);color:var(--brass-hi)}
+
+/* legal pages */
+.legal{max-width:820px}
+.ltabs{display:flex;flex-wrap:wrap;border:1px solid var(--brass-dim);border-radius:3px;overflow:hidden;margin-top:26px;width:max-content;max-width:100%}
+.ltabs a{padding:8px 14px;color:var(--brass);text-decoration:none;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border-left:1px solid var(--brass-dim);white-space:nowrap}
+.ltabs a:first-child{border-left:0}
+.ltabs a[aria-current="true"]{background:var(--brass);color:var(--bg)}
+@media (max-width:520px){.ltabs{width:100%;display:grid;grid-template-columns:1fr 1fr}.ltabs a{border-left:0;border-top:1px solid var(--brass-dim);text-align:center}.ltabs a:nth-child(-n+2){border-top:0}.ltabs a:nth-child(even){border-left:1px solid var(--brass-dim)}}
+section.doc{padding:0;scroll-margin-top:84px}
+.doc{margin-top:30px;color:var(--ink2);font-size:15.5px}
+.doc+.doc{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+.js .doc+.doc{margin-top:30px;padding-top:0;border-top:0}
+.doc h1{font-weight:400;font-size:30px;color:var(--ink);margin:0}
+.doc .app-name{color:var(--brass);font-size:11px;letter-spacing:.32em;text-transform:uppercase;display:block;margin-bottom:6px}
+.doc .eff{color:var(--muted);font-style:italic;margin:4px 0 18px}
+.doc h2{font-size:19px;color:var(--ink);margin:28px 0 8px}
+.doc p{margin:10px 0}
+.doc p.cl{display:grid;grid-template-columns:42px minmax(0,1fr);gap:8px}
+.doc p.cl .n{color:var(--brass)}
+.doc p.caps{font-size:13px;letter-spacing:.02em}
+.doc ul{padding-left:20px}
+.doc li+li{margin-top:6px}
+.doc b{color:var(--ink);font-weight:400}
+.doc .grp{border:1px solid var(--line);border-radius:6px;background:var(--bg2);margin:12px 0}
+.doc .grp>div{padding:11px 14px;border-top:1px solid var(--line)}
+.doc .grp>div:first-child{border-top:0}
+.doc .grp b{display:block;color:var(--ink);word-break:break-word}
+.doc .lbl{display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(143,185,150,.45);border-radius:6px;padding:12px 14px;margin:6px 0 16px}
+.doc .lbl .ic{color:var(--green);font-size:16px}
+.doc .lbl b{display:block;color:var(--green)}
+.doc .lbl span{display:block}
+.doc .foot{color:var(--muted);font-style:italic;font-size:13.5px;margin-top:26px}
+@media (max-width:520px){.btn.big{white-space:normal;width:100%;justify-content:flex-start;padding:10px 18px}.btn.big .t b{letter-spacing:.12em}}
+@media (max-width:420px){.step .ui{white-space:normal}}
+.step .ui{-webkit-box-decoration-break:clone;box-decoration-break:clone}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#emblem"/></svg><span>Flight Deck Suite</span></a>
+    <nav class="links" aria-label="Pages"><a href="index.html#apps">The apps</a><a href="before-you-start.html">Before you start</a><a href="index.html#install">Installing</a><a href="downloads.html" aria-current="page">Downloads</a><a href="index.html#support">Support</a></nav>
+    <a class="btn sm dl" href="index.html#get"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><use href="#i-down"/></svg>Download</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap dlhead">
+    <a class="back" href="index.html">‹ Flight Deck Suite</a>
+    <span class="eyebrow" style="display:block">Downloads</span>
+    <h2 style="margin-top:6px">Manual downloads</h2>
+    <p class="lead">Each app on its own, for PCs where Flight Deck Manager can't be used. Most pilots are better served by the Manager, which checks the PC and keeps every app up to date.</p>
+    <div class="notice"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>The first release is being prepared. Each app's package appears here with it, with its version, size and what's new. Meanwhile, <a href="before-you-start.html">Before you start</a> shows how to get everything ready.</div></div>
+    <div class="pk"><div class="hd"><span class="ring" style="width:42px;height:42px"><svg class="i" viewBox="0 0 24 24" style="width:22px;height:22px"><use href="#i-book"/></svg></span><div class="w"><div class="nm">Logbook</div><div class="s">with Playback and Hangar</div></div><span class="btn" aria-disabled="true">With the first release</span></div><div class="needs" style="margin-top:14px;color:var(--muted);font-style:italic;font-size:14px">Needs <a href="before-you-start.html#msfs">MSFS 2024</a> · <a href="before-you-start.html#obs">OBS Studio</a> optional</div></div>
+    <div class="pk"><div class="hd"><span class="ring" style="width:42px;height:42px"><svg class="i" viewBox="0 0 24 24" style="width:22px;height:22px"><use href="#i-phone"/></svg></span><div class="w"><div class="nm">Squawk</div><div class="s">vPilot plugin and the iPhone and iPad app</div></div><span class="btn" aria-disabled="true">With the first release</span></div><div class="needs" style="margin-top:14px;color:var(--muted);font-style:italic;font-size:14px">Needs <a href="before-you-start.html#vpilot">vPilot</a> · <a href="before-you-start.html#tailscale">Tailscale</a> · a <a href="before-you-start.html#vatsim">VATSIM account</a></div></div>
+    <div class="pk"><div class="hd"><span class="ring" style="width:42px;height:42px"><svg viewBox="0 0 24 24" style="width:22px;height:22px"><use href="#i-plane"/></svg></span><div class="w"><div class="nm">Ramp</div><div class="s">static airliners on empty stands</div></div><span class="btn" aria-disabled="true">With the first release</span></div><div class="needs" style="margin-top:14px;color:var(--muted);font-style:italic;font-size:14px">Needs <a href="before-you-start.html#msfs">MSFS 2024</a> · <a href="before-you-start.html#fsltl">FSLTL Base Models</a> · <a href="before-you-start.html#webview2">WebView2</a></div></div>
+    <div class="pk soon"><div class="hd"><span class="ring" style="width:42px;height:42px"><svg class="i" viewBox="0 0 24 24" style="width:22px;height:22px"><use href="#i-view"/></svg></span><div class="w"><div class="nm">Vantage</div><div class="s">cameras, sound and feel</div></div><span class="btn" aria-disabled="true">Coming soon</span></div></div>
+    <p class="ck">Each package's SHA-256 checksum is listed in <code>CHECKSUMS.txt</code> beside it, so a download can be checked before it's opened. What each app needs is explained in <a href="before-you-start.html">Before you start</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="c">Flight Deck Suite © 2026 Malcolm Syme · <a href="mailto:mcsyme11@gmail.com" style="color:var(--ink2)">mcsyme11@gmail.com</a></span>
+    <nav aria-label="More"><a href="before-you-start.html">Before you start</a><a href="downloads.html">Manual downloads</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms of Use</a><a href="https://github.com/mcsyme11-byte/Flight-Suite-Releases/blob/main/THIRD-PARTY-NOTICES.md">Third-party notices</a></nav>
+    <span class="dis">Not affiliated with or endorsed by Microsoft, Asobo Studio, VATSIM, the developer of vPilot, Tailscale, the OBS Project, FSLTL, FlyByWire Simulations or FSDreamTeam. Microsoft Flight Simulator is a trademark of Microsoft Corporation; other names are trademarks of their owners.</span>
+  </div>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="emblem"><circle cx="20" cy="20" r="18.5" fill="#0F1520" stroke="#C0A062" stroke-width="1.5"/><circle cx="20" cy="20" r="15" fill="none" stroke="#7E6A45" stroke-width=".8"/>
+      <path d="M20 7.5L22.6 17.4 32.5 20 22.6 22.6 20 32.5 17.4 22.6 7.5 20 17.4 17.4Z" fill="#C0A062"/>
+      <path d="M20 12.5L21.2 18.8 27.5 20 21.2 21.2 20 27.5 18.8 21.2 12.5 20 18.8 18.8Z" fill="#0F1520" transform="rotate(45 20 20)"/>
+      <circle cx="20" cy="20" r="1.9" fill="#0F1520" stroke="#C0A062" stroke-width=".9"/></g>
+    <g id="emblem-small"><circle cx="20" cy="20" r="18.5" fill="#0F1520" stroke="#C0A062" stroke-width="2"/><path d="M20 8L22.8 17.2 32 20 22.8 22.8 20 32 17.2 22.8 8 20 17.2 17.2Z" fill="#C0A062"/></g>
+    <g id="i-down"><path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 19.5h14"/></g>
+    <g id="i-book"><path d="M3.5 5.5c2.8-1.2 5.8-1.1 8.5.6 2.7-1.7 5.7-1.8 8.5-.6V19c-2.8-1.1-5.8-1-8.5.6-2.7-1.6-5.7-1.7-8.5-.6z"/><path d="M12 6.1v13.5"/></g>
+    <g id="i-play"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.6v6.8l5.4-3.4z"/></g>
+    <g id="i-hangar"><path d="M3 20v-9l9-5.5 9 5.5v9"/><path d="M6.5 20v-6.5h11V20"/><path d="M2 20h20"/></g>
+    <g id="i-phone"><rect x="6.5" y="3" width="9.5" height="18" rx="2"/><path d="M10 18h2.5"/><path d="M18.6 7.2a4.5 4.5 0 0 1 0 5.6"/><path d="M20.8 5a7.8 7.8 0 0 1 0 10"/></g>
+    <g id="i-plane"><path transform="translate(12 12) scale(18)" fill="currentColor" stroke="none" d="M0 -0.5C0.03 -0.5 0.045 -0.44 0.045 -0.38L0.045 -0.06L0.5 0.13L0.5 0.18L0.045 0.08L0.04 0.36L0.18 0.45L0.18 0.49L0.02 0.47L0 0.5L-0.02 0.47L-0.18 0.49L-0.18 0.45L-0.04 0.36L-0.045 0.08L-0.5 0.18L-0.5 0.13L-0.045 -0.06L-0.045 -0.38C-0.045 -0.44 -0.03 -0.5 0 -0.5Z"/></g>
+    <g id="i-plane-o"><path d="M12 2.8c.6 0 1 .9 1 2v4.4l7.5 3.6v1.6L13 12.6v4.6l2.6 1.7v1.4L12 19.4l-3.6.9v-1.4l2.6-1.7v-4.6l-7.5 1.8v-1.6L11 9.2V4.8c0-1.1.4-2 1-2z"/></g>
+    <g id="i-view"><path d="M4 8.5V4h4.5M15.5 4H20v4.5M20 15.5V20h-4.5M8.5 20H4v-4.5"/><circle cx="12" cy="12" r="3.6"/></g>
+    <g id="i-check"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16.2 9.5"/></g>
+    <g id="i-grid"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></g>
+    <g id="i-refresh"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v4h-4"/></g>
+    <g id="i-gear"><circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/><circle cx="12" cy="12" r="6.6"/></g>
+    <g id="i-about"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><path d="M12 7.6v.4"/></g>
+    <g id="i-warn"><path d="M12 3.5l9 16H3z"/><path d="M12 10v4.5"/><path d="M12 17.2v.3"/></g>
+    <g id="i-user"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c.9-3.8 3.9-6 7.5-6s6.6 2.2 7.5 6"/></g>
+    <g id="i-radio"><rect x="3.5" y="9" width="17" height="11" rx="1.5"/><path d="M7 9l10-5"/><circle cx="15.5" cy="14.5" r="2.6"/><path d="M6.5 13h3M6.5 16h3"/></g>
+    <g id="i-link"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></g>
+    <g id="i-window"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M3.5 8.5h17"/><path d="M6.5 6.5h.5M9 6.5h.5"/></g>
+    <g id="i-video"><rect x="3" y="6.5" width="12.5" height="11" rx="1.5"/><path d="M15.5 10.5l5.5-3v9l-5.5-3"/></g>
+    <g id="i-gate"><path d="M3 20V9h8v11"/><path d="M11 12h6.5l3 2.5"/><path d="M3 20h18"/><path d="M6 12h2"/></g>
+  </defs>
+</svg>
+</body>
+</html>
