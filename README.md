@@ -6,7 +6,7 @@
 
 > This repository hosts the official downloads, release notes and website of Flight Deck Suite. The source code is maintained privately.
 >
-> **Status:** the first public release is being prepared. Its downloads will appear on the website and under this repository's Releases.
+> **Status:** the first public release was published on Nov 10, 2026: Flight Deck Manager 0.1.1, Logbook 4.9, Ramp 0.3.1 (in testing) and Squawk 6.6. Vantage is coming soon.
 
 ---
 
@@ -43,7 +43,7 @@
 
 | File | Description |
 |---|---|
-| **FlightDeckManager-Setup.exe** | The recommended installer (with the first release). It installs Flight Deck Manager for the current Windows user (no administrator rights required); the Manager then installs and updates the apps. |
+| **FlightDeckManager-Setup.exe** | The recommended installer. It installs Flight Deck Manager for the current Windows user (no administrator rights required); the Manager then installs and updates the apps. |
 | Each app's package | For PCs where the Manager can't be used, on the [Manual downloads](https://mcsyme11-byte.github.io/Flight-Suite-Releases/downloads.html) page. These copies do not update automatically. |
 | `CHECKSUMS.txt` | The SHA-256 checksum of every file in a release. |
 
