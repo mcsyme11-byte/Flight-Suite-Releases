@@ -93,13 +93,13 @@
    "sub": "vPilot on your phone",
    "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
    "status": "available",
-   "version": "6.6",
+   "version": "6.7",
    "date": "2026-11-10",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.6/Squawk-6.6.zip",
-   "sha256": "319eff9d08cd0437a5afc70938d59a60efeab0354bc117e985dac50ddee81245",
-   "size": 722378,
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.7/Squawk-6.7.zip",
+   "sha256": "ce0b84adfb8d08917be3a1a570949ceaad9f3c6bc6749de07ffd916143962fa5",
+   "size": 723025,
    "notes": [
-    "The first public release."
+    "The route line stays on the map when you zoom in at either end of a route over the pole or across the date line."
    ],
    "needs": [
     {
