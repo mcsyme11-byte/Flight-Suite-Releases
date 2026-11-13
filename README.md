@@ -84,11 +84,11 @@ The apps work alongside a few free programs made by other people. The [Before yo
 
 ## Privacy
 
-The suite has no accounts, advertising, analytics or tracking, and sends nothing to the developer. Everything is stored on your own PC. The apps contact outside services only for the features that need them (for example GitHub for updates, VATSIM's public data, SimBrief with your username, and Tailscale for the link to your phone). See the full [Privacy Policy](https://mcsyme11-byte.github.io/Flight-Suite-Releases/privacy.html).
+The suite has no accounts, advertising, analytics or tracking, and sends nothing to the developer. Everything is stored on your own PC. The apps contact outside services only for the features that need them (for example GitHub for updates, VATSIM's public data, SimBrief with your username, and Tailscale for the link to your phone). See the full [Privacy Policy](https://mcsyme11-byte.github.io/Flight-Suite-Releases/legal.html#privacy-manager).
 
 ## Terms and licences
 
-Flight Deck Suite is free to download and use, and is provided as is, without warranty. See the [Terms of Use](https://mcsyme11-byte.github.io/Flight-Suite-Releases/terms.html) and [LICENSE.md](LICENSE.md).
+Flight Deck Suite is free to download and use, and is provided as is, without warranty. See the [Terms of Use](https://mcsyme11-byte.github.io/Flight-Suite-Releases/legal.html#terms-manager) and [LICENSE.md](LICENSE.md).
 
 The suite uses open-source software and open data, each under its own licence. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 

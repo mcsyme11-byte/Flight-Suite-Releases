@@ -4,7 +4,7 @@ Copyright (c) 2026 Malcolm Syme (mcsyme11@gmail.com). All rights reserved.
 
 Flight Deck Suite (Flight Deck Manager, Logbook, Playback, Hangar, Squawk, Ramp and Vantage), including the website,
 documentation, designs and builds in this repository, is the work of Malcolm Syme. The apps are free to download and
-use under their Terms of Use (terms.html). No permission is granted to copy, modify, sell or distribute them, or any
+use under their Terms of Use (legal.html on the website). No permission is granted to copy, modify, sell or distribute them, or any
 file in this repository, without written permission from the author.
 
 The suite uses third-party software, data and services that keep their own licences, terms and acknowledgements;
