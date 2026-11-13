@@ -1,12 +1,54 @@
 {
  "v": 1,
  "manager": {
-  "version": "0.1.2",
-  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.2/FlightDeckManager-Setup.exe",
-  "sha256": "080935812e84b01c2a6a11afe7b42c1f970b92b52e7c47ccc3c1cda28d1d7daf",
-  "size": 1132544,
+  "version": "0.1.3",
+  "date": "2026-11-13",
+  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.3/FlightDeckManager-Setup.exe",
+  "sha256": "7a74a0bec13ec54459df26a07fdeda6c895ca4927de7e94cf7ef28cd66304a4a",
+  "size": 1176064,
   "notes": [
-   "Take over: an app installed by hand (before the Manager) can be handed to the Manager, which then updates it. Its settings and data stay where they are, and the copy installed by hand is kept as a backup."
+   "Update alerts: the Manager can start with Windows, wait beside the clock and show a notification when an update is ready, never while MSFS is running. It asks once; Settings switches it on or off.",
+   "Every update lists all of its changes, and each app's Details page has its version history.",
+   "Update all, when more than one update is ready.",
+   "Repair, on an app's Details page: installs the same version afresh. Settings and data stay as they are.",
+   "The app cards come first, and Finish setting up folds away to one line once everything is set up.",
+   "Start with MSFS moved to Settings; each app's card says when it opens with the sim.",
+   "A Help page: the common fixes, Copy details for support, the guides and What's new.",
+   "The Terms of Use, Privacy Policy and third-party notices can be read on the About page.",
+   "On this PC, in each app's Details: the real folders with Open buttons, and the copy kept by Take over can be deleted.",
+   "Logbook's Details page points to Move to a new PC, for taking your flights to another computer."
+  ],
+  "history": [
+   {
+    "version": "0.1.3",
+    "date": "2026-11-13",
+    "notes": [
+     "Update alerts: the Manager can start with Windows, wait beside the clock and show a notification when an update is ready, never while MSFS is running. It asks once; Settings switches it on or off.",
+     "Every update lists all of its changes, and each app's Details page has its version history.",
+     "Update all, when more than one update is ready.",
+     "Repair, on an app's Details page: installs the same version afresh. Settings and data stay as they are.",
+     "The app cards come first, and Finish setting up folds away to one line once everything is set up.",
+     "Start with MSFS moved to Settings; each app's card says when it opens with the sim.",
+     "A Help page: the common fixes, Copy details for support, the guides and What's new.",
+     "The Terms of Use, Privacy Policy and third-party notices can be read on the About page.",
+     "On this PC, in each app's Details: the real folders with Open buttons, and the copy kept by Take over can be deleted.",
+     "Logbook's Details page points to Move to a new PC, for taking your flights to another computer."
+    ]
+   },
+   {
+    "version": "0.1.2",
+    "date": "2026-11-10",
+    "notes": [
+     "Take over: an app installed by hand (before the Manager) can be handed to the Manager, which then updates it. Its settings and data stay where they are, and the copy installed by hand is kept as a backup."
+    ]
+   },
+   {
+    "version": "0.1.1",
+    "date": "2026-11-10",
+    "notes": [
+     "The first public release."
+    ]
+   }
   ]
  },
  "apps": [
@@ -41,7 +83,16 @@
     }
    ],
    "icon": "book",
-   "start": "msfs"
+   "start": "msfs",
+   "history": [
+    {
+     "version": "4.9",
+     "date": "2026-11-10",
+     "notes": [
+      "The first public release."
+     ]
+    }
+   ]
   },
   {
    "id": "ramp",
@@ -77,7 +128,16 @@
     }
    ],
    "icon": "plane",
-   "start": "msfs"
+   "start": "msfs",
+   "history": [
+    {
+     "version": "0.3.1",
+     "date": "2026-11-10",
+     "notes": [
+      "The first public release."
+     ]
+    }
+   ]
   },
   {
    "id": "vantage",
@@ -94,7 +154,7 @@
    "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
    "status": "available",
    "version": "6.7",
-   "date": "2026-11-10",
+   "date": "2026-11-11",
    "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.7/Squawk-6.7.zip",
    "sha256": "ce0b84adfb8d08917be3a1a570949ceaad9f3c6bc6749de07ffd916143962fa5",
    "size": 723025,
@@ -120,7 +180,23 @@
     }
    ],
    "icon": "phone",
-   "start": "vpilot"
+   "start": "vpilot",
+   "history": [
+    {
+     "version": "6.7",
+     "date": "2026-11-11",
+     "notes": [
+      "The route line stays on the map when you zoom in at either end of a route over the pole or across the date line."
+     ]
+    },
+    {
+     "version": "6.6",
+     "date": "2026-11-10",
+     "notes": [
+      "The first public release."
+     ]
+    }
+   ]
   }
  ]
 }

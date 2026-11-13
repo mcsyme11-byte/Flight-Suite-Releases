@@ -6,7 +6,7 @@
 
 > This repository hosts the official downloads, release notes and website of Flight Deck Suite. The source code is maintained privately.
 >
-> **Status:** the first public release was published on Nov 10, 2026: Flight Deck Manager 0.1.1 (0.1.2 since the same evening), Logbook 4.9, Ramp 0.3.1 and Squawk 6.6. Vantage is coming soon.
+> **Status:** the first public release was published on Nov 10, 2026 (Flight Deck Manager 0.1.1, Logbook 4.9, Ramp 0.3.1 and Squawk 6.6). Since then: Squawk 6.7 (Nov 11) and Flight Deck Manager 0.1.3 (Nov 13). Every version's changes are on the [What's new](https://mcsyme11-byte.github.io/Flight-Suite-Releases/whats-new.html) page. Vantage is coming soon.
 
 ---
 

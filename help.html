@@ -272,6 +272,7 @@ footer .dis{grid-column:1 / -1;margin:0;padding-top:18px;border-top:1px solid va
 .pk summary::-webkit-details-marker{display:none}
 .pk summary::before{content:"›";display:inline-block;margin-right:8px;transition:transform .15s}
 .pk details[open] summary::before{transform:rotate(90deg)}
+.pk details .every{margin:8px 0 0;font-size:14px}
 .pk details ul{margin:10px 0 0;padding-left:18px;color:var(--ink2);font-size:15px}
 .old{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px;table-layout:fixed}
 .old td:nth-child(1){width:22%}.old td:nth-child(2){width:38%}.old td:nth-child(3){width:20%}
@@ -328,7 +329,7 @@ footer .dis{grid-column:1 / -1;margin:0;padding-top:18px;border-top:1px solid va
 @media (max-width:520px){.step{padding:20px 16px}}
 .step .hd{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .step .hd .w{flex:1 1 240px;min-width:0}
-.step .hd .num{color:var(--brass);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
+.step .hd .num{display:block;line-height:1.55;color:var(--brass);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase}
 .step .hd h2{font-size:28px;margin:2px 0 0}
 .step .for{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;color:var(--muted);font-style:italic;font-size:14px}
 .step .for b{font-style:normal;font-weight:400;color:var(--ink2)}
@@ -341,6 +342,18 @@ footer .dis{grid-column:1 / -1;margin:0;padding-top:18px;border-top:1px solid va
 .step ol>li b,.step p b{color:var(--ink);font-weight:400}
 .step .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
 .step code{font:13px var(--mono);color:var(--ink2);overflow-wrap:break-word}
+/* What's new (whats-new.html): each version of an app, newest first */
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.jump a{color:var(--ink2);text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:6px 14px;font-size:14px}
+.jump a:hover{color:var(--brass-hi);border-color:var(--brass-dim)}
+.rel{border-top:1px solid var(--line);padding:16px 0 0;margin-top:16px}
+.step .rel:first-of-type{margin-top:20px}
+.rv{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.rv b{font-weight:400;color:var(--ink);font-size:19px}
+.rv span{color:var(--muted);font-style:italic;font-size:14px}
+.rv em{font-style:normal;color:var(--brass);font-size:10px;letter-spacing:.22em;text-transform:uppercase;border:1px solid var(--brass-dim);border-radius:3px;padding:1px 6px}
+.rel ul{margin:8px 0 0;padding-left:18px;color:var(--ink2);font-size:15.5px;line-height:1.6}
+.rel li+li{margin-top:4px}
 .tip{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line2);border-left:3px solid var(--brass-dim);border-radius:3px;background:var(--bg2);padding:12px 14px;color:var(--ink2);font-size:14.5px;margin-top:16px}
 .tip.warn{border-left-color:var(--amber)}
 /* the easy way first: Flight Deck Manager does it */
@@ -453,7 +466,7 @@ section.doc{padding:0;scroll-margin-top:84px}
       <ol>
         <li><div><b>Close the sim and the app</b> (for Squawk, close vPilot).</div></li>
         <li><div>On the app's card, select <span class="ui">Take over</span>, then confirm.</div></li>
-        <li><div>The Manager puts the released copy in its place. Your settings and data stay where they are, and the copy you installed is kept as a backup in the Manager's folder (its place is on the app's <span class="ui">Details</span> page).</div></li>
+        <li><div>The Manager puts the released copy in its place. Your settings and data stay where they are, and the copy you installed is kept as a backup in the Manager's folder (its place is on the app's <span class="ui">Details</span> page, where it can be deleted once everything works).</div></li>
       </ol>
     </article>
 
@@ -497,7 +510,7 @@ section.doc{padding:0;scroll-margin-top:84px}
     <article class="step" id="logbook">
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Logbook doesn't open with the sim</h2></div></div>
       <ol>
-        <li><div><b>Turn on <span class="ui">Start with MSFS</span></b> on the Manager's Apps page, with the sim closed. The Manager asks first and keeps a backup of the sim's start list.</div></li>
+        <li><div><b>Turn on <span class="ui">Start with MSFS</span></b> in the Manager's <span class="ui">Settings</span>, with the sim closed. The Manager asks first and keeps a backup of the sim's start list.</div></li>
         <li><div><b>Or start Logbook yourself</b> from the Start menu, before or during a flight. It notices the sim by itself.</div></li>
       </ol>
     </article>
@@ -520,10 +533,30 @@ section.doc{padding:0;scroll-margin-top:84px}
       </ol>
     </article>
 
+    <article class="step" id="repair">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An app stopped working properly</h2></div></div>
+      <ol>
+        <li><div><b>Open the app's <span class="ui">Details</span></b> on the Manager's Apps page and select <span class="ui">Repair</span>. The Manager downloads the same version again, checks it and installs it afresh. Its settings and data stay as they are.</div></li>
+        <li><div><b>If an update is ready,</b> update instead: an update installs it afresh too.</div></li>
+        <li><div><b>Installed without the Manager?</b> Select <span class="ui">Take over</span> on its card first (<a href="#by-hand">above</a>); Repair is then there too.</div></li>
+      </ol>
+    </article>
+
+    <article class="step" id="move-pc">
+      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Moving to a new PC</h2></div></div>
+      <p>Logbook takes your flights with you in one file: the logbook, Playback's recordings, aircraft profiles and list, and Logbook's settings. Video clips and screenshots go too if you tick them.</p>
+      <ol>
+        <li><div><b>On the old PC,</b> open the Logbook site's <span class="ui">Settings</span>, then <span class="ui">Move to a new PC</span> › <span class="ui">Export</span>, and save the file. It's checked as it's written.</div></li>
+        <li><div><b>Copy the file</b> to the new PC, on a USB stick or through a cloud folder.</div></li>
+        <li><div><b>On the new PC,</b> install Logbook with Flight Deck Manager, then open <span class="ui">Settings</span> › <span class="ui">Move to a new PC</span> › <span class="ui">Import</span> and choose the file.</div></li>
+      </ol>
+      <p>Import checks the whole file before it changes anything, backs up the new PC's logbook first (<code>Backups\before import &lt;date time&gt;</code>) and never overwrites a file. A flight that's on both PCs but different is shown to you: keep this PC's, use the file's, or keep both. Importing the same file twice adds nothing twice. It works on the PC only, not from the phone, and needs Logbook 4.8 or later.</p>
+    </article>
+
     <article class="step" id="contact">
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-user"/></svg></span><div class="w"><span class="num">Still stuck</span><h2>Send the details</h2></div></div>
       <ol>
-        <li><div><b>In Flight Deck Manager,</b> open <span class="ui">Settings</span> and select <span class="ui">Copy details for support</span>. It copies what the Manager sees on this PC, the apps' versions and the latest lines of its log. Your Windows user name and your PC's name are left out.</div></li>
+        <li><div><b>In Flight Deck Manager,</b> open <span class="ui">Help</span> and select <span class="ui">Copy details for support</span>. It copies what the Manager sees on this PC, the apps' versions and the latest lines of its log. Your Windows user name and your PC's name are left out.</div></li>
         <li><div><b>Email <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a>,</b> paste the details, and say what you were doing when it went wrong.</div></li>
       </ol>
     </article>
@@ -534,7 +567,7 @@ section.doc{padding:0;scroll-margin-top:84px}
 <footer>
   <div class="wrap">
     <div class="fbrand"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#emblem"/></svg><div><b>Flight Deck Suite</b><span>© 2026 Malcolm Syme · <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a></span></div></div>
-    <nav aria-label="More"><a href="apps.html">The apps</a><a href="install.html">Install</a><a href="downloads.html">Downloads</a><a href="help.html">Help</a><a href="legal.html">Legal</a><a href="https://github.com/mcsyme11-byte/Flight-Suite-Releases">GitHub</a></nav>
+    <nav aria-label="More"><a href="apps.html">The apps</a><a href="install.html">Install</a><a href="downloads.html">Downloads</a><a href="help.html">Help</a><a href="whats-new.html">What's new</a><a href="legal.html">Legal</a><a href="https://github.com/mcsyme11-byte/Flight-Suite-Releases">GitHub</a></nav>
     <p class="dis">Free · not affiliated with or endorsed by Microsoft, Asobo Studio, VATSIM, the developer of vPilot, Tailscale, the OBS Project, FSLTL, FlyByWire Simulations or FSDreamTeam. Microsoft Flight Simulator is a trademark of Microsoft Corporation; other names are trademarks of their owners.</p>
   </div>
 </footer>
