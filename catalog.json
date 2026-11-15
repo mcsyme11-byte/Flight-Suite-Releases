@@ -153,13 +153,13 @@
    "sub": "vPilot on your phone",
    "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
    "status": "available",
-   "version": "6.7",
-   "date": "2026-11-11",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.7/Squawk-6.7.zip",
-   "sha256": "ce0b84adfb8d08917be3a1a570949ceaad9f3c6bc6749de07ffd916143962fa5",
-   "size": 723025,
+   "version": "6.8",
+   "date": "2026-11-14",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.8/Squawk-6.8.zip",
+   "sha256": "dd0941cf23b516ce16e9c1e45dc74b0142ce2c7714ec0900faa8b8b8afcd4127",
+   "size": 723341,
    "notes": [
-    "The route line stays on the map when you zoom in at either end of a route over the pole or across the date line."
+    "Flight watch: no more false \"MSFS went back to the menu\" alerts when the sim stutters; the alert now comes only after 20 s really in the menu."
    ],
    "needs": [
     {
@@ -182,6 +182,13 @@
    "icon": "phone",
    "start": "vpilot",
    "history": [
+    {
+     "version": "6.8",
+     "date": "2026-11-14",
+     "notes": [
+      "Flight watch: no more false \"MSFS went back to the menu\" alerts when the sim stutters; the alert now comes only after 20 s really in the menu."
+     ]
+    },
     {
      "version": "6.7",
      "date": "2026-11-11",
