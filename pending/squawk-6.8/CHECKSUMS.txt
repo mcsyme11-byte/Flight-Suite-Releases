@@ -1,3 +1,0 @@
-Squawk 6.8 · Flight Deck Suite · Malcolm Syme · mcsyme11@gmail.com
-
-SHA-256  dd0941cf23b516ce16e9c1e45dc74b0142ce2c7714ec0900faa8b8b8afcd4127  Squawk-6.8.zip (723341 bytes)
