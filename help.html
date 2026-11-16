@@ -424,6 +424,60 @@ section.doc{padding:0;scroll-margin-top:84px}
 .part h2{margin-top:6px}
 .part .lead{margin-top:10px}
 @media (max-width:389px){.top .dl .tx{display:none}.top .dl{padding:6px 10px}.top .wrap{gap:12px}}
+
+/* Help (help.html): the search bar, the questions pilots ask and the folded fix cards (approved Nov 16, 2026) */
+.hsearch{margin-top:30px;max-width:720px}
+.hsearch .box{position:relative}
+.hsearch svg.i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--brass);pointer-events:none}
+.hsearch input{width:100%;height:54px;padding:0 54px 0 48px;border:1px solid var(--line2);border-radius:4px;background:var(--deep);color:var(--ink);font:16px var(--sys);-webkit-appearance:none;appearance:none}
+.hsearch input::placeholder{color:var(--faint)}
+.hsearch input:focus{outline:none;border-color:var(--brass)}
+.hsearch input::-webkit-search-cancel-button{display:none}
+.hsearch .clr{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:transparent;color:var(--muted);font-size:18px;border-radius:3px}
+.hsearch .clr:hover{color:var(--brass)}
+.hsearch .meta{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin-top:10px;min-height:22px;color:var(--muted);font-style:italic;font-size:14px}
+.hsearch .go{display:inline-flex;gap:18px;white-space:nowrap}
+@media (max-width:520px){.hsearch #qcount{flex-basis:100%}}
+.hsearch .meta a{font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none}
+.hsearch kbd{font:12px var(--mono);color:var(--ink2);border:1px solid var(--line2);border-radius:3px;padding:0 5px;font-style:normal}
+@media (hover:none){.hsearch .k{display:none}}
+.hsec{margin-top:56px;scroll-margin-top:84px}
+.hsec>.eyebrow{display:block}
+.hsec>h2{margin-top:6px}
+.faq{margin-top:22px;background:var(--card);border:1px solid var(--line);border-top-color:var(--brass-dim);border-radius:6px;padding:4px 24px}
+@media (max-width:520px){.faq{padding:2px 16px}}
+.faq details{scroll-margin-top:84px}
+.faq details:not([hidden]) ~ details:not([hidden]){border-top:1px solid var(--line)}
+.faq summary{display:grid;grid-template-columns:minmax(0,1fr) 20px;gap:14px;align-items:center;min-height:56px;padding:14px 0;cursor:pointer;list-style:none;color:var(--ink);font-size:18px;line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"›";color:var(--brass);font-size:22px;line-height:1;justify-self:center;transition:transform .15s}
+.faq details[open] summary::after{transform:rotate(90deg)}
+.faq summary:hover{color:var(--brass-hi)}
+.faq .a{padding:0 34px 18px 0;color:var(--ink2)}
+@media (max-width:520px){.faq summary{font-size:17px}.faq .a{padding-right:0}}
+.faq .a p{margin:0}.faq .a p+p{margin-top:10px}
+.faq .a b{color:var(--ink);font-weight:400}
+.faq .ui{font-family:var(--sys);font-size:.9em;color:var(--ink);background:var(--deep);border:1px solid var(--line2);border-radius:3px;padding:0 5px;white-space:nowrap}
+.hnone{margin-top:22px;background:var(--card);border:1px dashed var(--line2);border-radius:6px;padding:22px 24px;color:var(--ink2)}
+.hnone b{color:var(--ink);font-weight:400}
+
+.fix{margin-top:12px;padding:0;scroll-margin-top:84px}
+.step.fix>summary.hd{list-style:none;cursor:pointer;padding:16px 24px;flex-wrap:nowrap;border-radius:6px}
+.fix>summary::-webkit-details-marker{display:none}
+.fix>summary:hover h2{color:var(--brass-hi)}
+.fix>summary .ring{width:40px!important;height:40px!important}
+.step.fix>.hd .w{flex:1 1 auto;min-width:0}
+.step.fix>.hd h2{font-size:22px;line-height:1.3}
+.fix .chev{display:inline-block;color:var(--brass);font-size:24px;line-height:1;width:20px;text-align:center;flex:none;transition:transform .15s}
+.fix[open] .chev{transform:rotate(90deg)}
+.fix[open]>summary{border-bottom:1px solid var(--line);border-radius:6px 6px 0 0}
+.fix .body{padding:4px 24px 22px}
+.fix .body>p:first-child{margin-top:12px}
+@media (max-width:520px){.step.fix>summary.hd{padding:14px 16px;gap:12px}.fix>summary .ring{width:36px!important;height:36px!important}.step.fix>.hd h2{font-size:19px}.fix .body{padding:2px 16px 18px}}
+.foldall{display:flex;gap:18px;justify-content:flex-end;margin:26px 0 -2px}
+.foldall button{border:0;background:none;padding:6px 0;color:var(--brass);font:11px var(--serif);letter-spacing:.2em;text-transform:uppercase}
+.foldall button:hover{color:var(--brass-hi)}
+mark.hl{background:rgba(192,160,98,.30);color:inherit;border-radius:2px;padding:0 1px}
 </style>
 </head>
 <body>
@@ -441,117 +495,147 @@ section.doc{padding:0;scroll-margin-top:84px}
     <a class="back" href="index.html">‹ Flight Deck Suite</a>
     <span class="eyebrow" style="display:block">Help</span>
     <h2 style="margin-top:6px">If something's not working</h2>
-    <p class="lead">The problems pilots meet most often, each with its fix. Still stuck? The last section shows how to send the details in one click.</p>
+    <p class="lead">The problems pilots meet most often, each with its fix, and the questions they ask. Still stuck? The last section shows how to send the details in one click.</p>
 
-    <article class="step" id="smartscreen">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-warn"/></svg></span><div class="w"><span class="num">Installing</span><h2>"Windows protected your PC"</h2></div></div>
-      <p>Windows shows this for a new program it hasn't seen many times yet. Flight Deck Manager is new, so the warning appears at first.</p>
+    <div class="hsearch" role="search">
+      <label for="q" class="eyebrow" style="display:block;margin-bottom:10px">Search help</label>
+      <div class="box">
+        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input id="q" type="search" placeholder="Try &ldquo;update&rdquo;, &ldquo;phone&rdquo; or &ldquo;empty gates&rdquo;" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <button class="clr" type="button" aria-label="Clear the search" hidden>&#x2715;</button>
+      </div>
+      <div class="meta"><span id="qcount" aria-live="polite">12 fixes and 11 questions.</span><span class="go"><a href="#fixes">Fixes</a><a href="#faq">Questions</a></span><span class="k">Press <kbd>/</kbd> to search</span></div>
+    </div>
+    <div class="hnone" id="qnone" hidden><b>Nothing matches &ldquo;<span id="qword"></span>&rdquo;.</b> Try a shorter or different word, or send the details (below) and you'll get an answer by email.</div>
+    <div id="fixes" class="foldall"><button type="button" data-f="1">Open all</button><button type="button" data-f="0">Close all</button></div>
+
+    <details class="step fix" id="smartscreen">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-warn"/></svg></span><div class="w"><span class="num">Installing</span><h2>"Windows protected your PC"</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>Windows shows this for a new program it hasn't seen many times yet. Flight Deck Manager is new, so the warning appears at first.</p>
       <ol>
         <li><div><b>Select <span class="ui">More info</span>,</b> check that it names <span class="ui">FlightDeckManager-Setup.exe</span>, then select <span class="ui">Run anyway</span>.</div></li>
         <li><div><b>Download it only from this website</b> or its <a href="https://github.com/mcsyme11-byte/Flight-Suite-Releases" target="_blank" rel="noopener">GitHub page</a>, never from a copy someone sent you.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="waiting">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An install or update says it's waiting</h2></div></div>
-      <p>That's on purpose. Nothing is installed, updated or removed while Microsoft Flight Simulator is running, so nothing changes in the middle of a flight. Squawk also waits for vPilot to close, because vPilot holds its files.</p>
+    <details class="step fix" id="waiting">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An install or update says it's waiting</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>That's on purpose. Nothing is installed, updated or removed while Microsoft Flight Simulator is running, so nothing changes in the middle of a flight. Squawk also waits for vPilot to close, because vPilot holds its files.</p>
       <ol>
         <li><div><b>Close the sim</b> (and vPilot, for Squawk). The waiting install runs by itself within a few seconds; the Manager only has to stay open.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="by-hand">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-gear"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An app shows "Installed without the Manager"</h2></div></div>
-      <p>The app was installed before the Manager, from a manual download. The Manager leaves it exactly as it is until you ask it to look after it. To have it updated by the Manager from now on:</p>
+    <details class="step fix" id="by-hand">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-gear"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An app shows "Installed without the Manager"</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>The app was installed before the Manager, from a manual download. The Manager leaves it exactly as it is until you ask it to look after it. To have it updated by the Manager from now on:</p>
       <ol>
         <li><div><b>Close the sim and the app</b> (for Squawk, close vPilot).</div></li>
         <li><div>On the app's card, select <span class="ui">Take over</span>, then confirm.</div></li>
         <li><div>The Manager puts the released copy in its place. Your settings and data stay where they are, and the copy you installed is kept as a backup in the Manager's folder (its place is on the app's <span class="ui">Details</span> page, where it can be deleted once everything works).</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="not-found">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>Something you have shows "Not found"</h2></div></div>
-      <ol>
+    <details class="step fix" id="not-found">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>Something you have shows "Not found"</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <ol>
         <li><div><b>Microsoft Flight Simulator 2024:</b> start the sim once and let it reach its main menu, so it creates its own folders, then select <span class="ui">Look again</span> in the Manager's <span class="ui">Settings</span>.</div></li>
         <li><div><b>FSLTL Base Models:</b> they must be in the Community folder the sim uses. Install them with FSLTL's own installer (<a href="before-you-start.html#fsltl">Before you start, step 5</a>), then <span class="ui">Look again</span>.</div></li>
         <li><div><b>Anything else:</b> a program installed somewhere other than its usual folder can't be seen. Reinstall it with its installer's suggested folder.</div></li>
       </ol>
-      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>The Manager never downloads Microsoft Flight Simulator, vPilot, FSLTL or GSX. A program you already have is never downloaded again.</div></div>
-    </article>
+      <div class="tip"><svg class="i" viewBox="0 0 24 24"><use href="#i-about"/></svg><div>The Manager never downloads Microsoft Flight Simulator, vPilot, FSLTL or GSX. A program you already have is never downloaded again.</div></div></div>
+    </details>
 
-    <article class="step" id="install-for-me">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>"Install for me" didn't work</h2></div></div>
-      <p>For OBS Studio, Tailscale and Microsoft Edge WebView2, the Manager uses Windows' own installer, winget, to fetch the program from its official source.</p>
+    <details class="step fix" id="install-for-me">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-down"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>"Install for me" didn't work</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>For OBS Studio, Tailscale and Microsoft Edge WebView2, the Manager uses Windows' own installer, winget, to fetch the program from its official source.</p>
       <ol>
         <li><div><b>If Windows asked for permission,</b> the install needs a yes. Select <span class="ui">Install for me</span> again and choose <span class="ui">Yes</span>.</div></li>
         <li><div><b>If the button isn't there,</b> this copy of Windows doesn't have winget. Use <span class="ui">Get it ›</span> instead: it opens the program's own page and the steps in <a href="before-you-start.html">Before you start</a>.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="blank-window">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-window"/></svg></span><div class="w"><span class="num">Ramp, Vantage, the Manager</span><h2>A window opens empty, or opens in the browser</h2></div></div>
-      <p>These windows are drawn by Microsoft Edge WebView2, which is part of Windows 10 and 11 but can be missing.</p>
+    <details class="step fix" id="blank-window">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-window"/></svg></span><div class="w"><span class="num">Ramp, Vantage, the Manager</span><h2>A window opens empty, or opens in the browser</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>These windows are drawn by Microsoft Edge WebView2, which is part of Windows 10 and 11 but can be missing.</p>
       <ol>
         <li><div><b>Install WebView2:</b> the Manager's <span class="ui">Install for me</span>, or <a href="before-you-start.html#webview2">Before you start, step 6</a>. Then start the app again.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="squawk">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-phone"/></svg></span><div class="w"><span class="num">Squawk</span><h2>The phone can't open Squawk</h2></div></div>
-      <ol>
+    <details class="step fix" id="squawk">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-phone"/></svg></span><div class="w"><span class="num">Squawk</span><h2>The phone can't open Squawk</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <ol>
         <li><div><b>Start vPilot.</b> Squawk runs inside vPilot, so its page is only there while vPilot is open.</div></li>
         <li><div><b>Check Tailscale on both devices:</b> the same account on the PC and the phone, and both showing <span class="ui">Connected</span>.</div></li>
         <li><div><b>Use the PC's name in Tailscale:</b> the address is <code>http://</code> followed by the name Tailscale shows for the PC, then <code>:8765</code>. The Manager's <span class="ui">Finish setting up</span> card shows it, with a <span class="ui">Copy</span> button.</div></li>
         <li><div><b>Installed Squawk while vPilot was open?</b> The Manager waits for it to close. Close vPilot, let the install finish, then start vPilot again.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="logbook">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Logbook doesn't open with the sim</h2></div></div>
-      <ol>
+    <details class="step fix" id="logbook">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Logbook doesn't open with the sim</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <ol>
         <li><div><b>Turn on <span class="ui">Start with MSFS</span></b> in the Manager's <span class="ui">Settings</span>, with the sim closed. The Manager asks first and keeps a backup of the sim's start list.</div></li>
         <li><div><b>Or start Logbook yourself</b> from the Start menu, before or during a flight. It notices the sim by itself.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="clips">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-video"/></svg></span><div class="w"><span class="num">Playback</span><h2>Landing replays work, but no video clip is made</h2></div></div>
-      <p>Replays and screenshots work without OBS Studio; only the video clips need it.</p>
+    <details class="step fix" id="clips">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-video"/></svg></span><div class="w"><span class="num">Playback</span><h2>Landing replays work, but no video clip is made</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>Replays and screenshots work without OBS Studio; only the video clips need it.</p>
       <ol>
         <li><div><b>Have OBS open</b> when you play back the landing.</div></li>
         <li><div><b>Switch on OBS's remote control:</b> in Logbook's Settings, select <span class="ui">Set up OBS for me</span>. Or by hand in OBS: <span class="ui">Tools</span> › <span class="ui">WebSocket Server Settings</span> › tick <span class="ui">Enable WebSocket server</span> › <span class="ui">OK</span> (<a href="before-you-start.html#obs">Before you start, step 7</a>).</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="ramp">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-plane"/></svg></span><div class="w"><span class="num">Ramp</span><h2>The gates stay empty</h2></div></div>
-      <ol>
+    <details class="step fix" id="ramp">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-plane"/></svg></span><div class="w"><span class="num">Ramp</span><h2>The gates stay empty</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <ol>
         <li><div><b>Wait for the flight to load.</b> Ramp fills the stands once your aircraft is on the ground and the flight is running, not on the loading screen.</div></li>
         <li><div><b>Check FSLTL Base Models</b> in the Manager (<span class="ui">Settings</span> › <span class="ui">This PC</span>). Ramp parks FSLTL's aircraft, so it needs them.</div></li>
         <li><div><b>Look at Ramp's window:</b> it says what it's doing at the airport, and why if it can't fill it.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="repair">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An app stopped working properly</h2></div></div>
-      <ol>
+    <details class="step fix" id="repair">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-refresh"/></svg></span><div class="w"><span class="num">Flight Deck Manager</span><h2>An app stopped working properly</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <ol>
         <li><div><b>Open the app's <span class="ui">Details</span></b> on the Manager's Apps page and select <span class="ui">Repair</span>. The Manager downloads the same version again, checks it and installs it afresh. Its settings and data stay as they are.</div></li>
         <li><div><b>If an update is ready,</b> update instead: an update installs it afresh too.</div></li>
         <li><div><b>Installed without the Manager?</b> Select <span class="ui">Take over</span> on its card first (<a href="#by-hand">above</a>); Repair is then there too.</div></li>
-      </ol>
-    </article>
+      </ol></div>
+    </details>
 
-    <article class="step" id="move-pc">
-      <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Moving to a new PC</h2></div></div>
-      <p>Logbook takes your flights with you in one file: the logbook, Playback's recordings, aircraft profiles and list, and Logbook's settings. Video clips and screenshots go too if you tick them.</p>
+    <details class="step fix" id="move-pc">
+      <summary class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-book"/></svg></span><div class="w"><span class="num">Logbook</span><h2>Moving to a new PC</h2></div><span class="chev" aria-hidden="true">›</span></summary>
+      <div class="body">      <p>Logbook takes your flights with you in one file: the logbook, Playback's recordings, aircraft profiles and list, and Logbook's settings. Video clips and screenshots go too if you tick them.</p>
       <ol>
         <li><div><b>On the old PC,</b> open the Logbook site's <span class="ui">Settings</span>, then <span class="ui">Move to a new PC</span> › <span class="ui">Export</span>, and save the file. It's checked as it's written.</div></li>
         <li><div><b>Copy the file</b> to the new PC, on a USB stick or through a cloud folder.</div></li>
         <li><div><b>On the new PC,</b> install Logbook with Flight Deck Manager, then open <span class="ui">Settings</span> › <span class="ui">Move to a new PC</span> › <span class="ui">Import</span> and choose the file.</div></li>
       </ol>
-      <p>Import checks the whole file before it changes anything, backs up the new PC's logbook first (<code>Backups\before import &lt;date time&gt;</code>) and never overwrites a file. A flight that's on both PCs but different is shown to you: keep this PC's, use the file's, or keep both. Importing the same file twice adds nothing twice. It works on the PC only, not from the phone, and needs Logbook 4.8 or later.</p>
-    </article>
+      <p>Import checks the whole file before it changes anything, backs up the new PC's logbook first (<code>Backups\before import &lt;date time&gt;</code>) and never overwrites a file. A flight that's on both PCs but different is shown to you: keep this PC's, use the file's, or keep both. Importing the same file twice adds nothing twice. It works on the PC only, not from the phone, and needs Logbook 4.8 or later.</p></div>
+    </details>
+
+    <div id="faq" class="hsec">
+      <span class="eyebrow">Questions</span>
+      <h2>Questions pilots ask</h2>
+      <div class="faq">
+        <details id="faq-free"><summary><span class="qt">Are the apps free?</span></summary><div class="a"><p><b>Yes.</b> Flight Deck Manager and every app in the suite are free. There's no account to make and no advertising.</p></div></details>
+        <details id="faq-2020"><summary><span class="qt">Do they work with Microsoft Flight Simulator 2020?</span></summary><div class="a"><p>The apps are made for <b>Microsoft Flight Simulator 2024</b>, from Steam or the Microsoft Store. MSFS 2020 isn't supported.</p></div></details>
+        <details id="faq-vatsim"><summary><span class="qt">Do I have to fly on VATSIM?</span></summary><div class="a"><p><b>Only for Squawk,</b> which works through vPilot, VATSIM's pilot client. Logbook, Playback, Hangar and Ramp work whether you fly online or not.</p></div></details>
+        <details id="faq-android"><summary><span class="qt">Does Squawk work on an Android phone?</span></summary><div class="a"><p>Squawk is made and tested for <b>iPhone and iPad</b>, opened in Safari and added to the Home Screen. Other phones aren't supported.</p></div></details>
+        <details id="faq-admin"><summary><span class="qt">Do I need administrator rights to install?</span></summary><div class="a"><p><b>No.</b> Flight Deck Manager installs for your Windows user only, on Windows 10 or 11 (64-bit). See <a href="install.html">How to install</a>.</p></div></details>
+        <details id="faq-midflight"><summary><span class="qt">Can an update interrupt my flight?</span></summary><div class="a"><p><b>No.</b> Nothing is installed, updated or removed while Microsoft Flight Simulator is running. A waiting update finishes by itself a few seconds after you close the sim (<a href="#waiting">see above</a>).</p></div></details>
+        <details id="faq-sim-files"><summary><span class="qt">Do the apps change my sim or my add-ons?</span></summary><div class="a"><p><b>Hangar only reads</b> your Community folder: it never moves, changes or deletes a file.</p><p>The Manager changes the sim's settings in one case: <span class="ui">Start with MSFS</span>, which adds an app to the list of programs the sim starts. It's off until you turn it on, and the Manager asks first, waits until the sim is closed and keeps a backup.</p></div></details>
+        <details id="faq-data"><summary><span class="qt">Is anything sent to the developer?</span></summary><div class="a"><p><b>No.</b> The apps have no accounts, analytics or tracking, and nothing is sent to the developer. Some apps contact services you already use, such as SimBrief for your flight plan or VATSIM for the weather; the <a href="legal.html">Legal</a> page lists each one.</p></div></details>
+        <details id="faq-remove"><summary><span class="qt">How do I remove an app, or the Manager?</span></summary><div class="a"><p><b>An app:</b> open its <span class="ui">Details</span> on the Manager's Apps page and select <span class="ui">Remove</span>. Your flights, recordings and settings are kept unless you choose otherwise.</p><p><b>The Manager:</b> Windows <span class="ui">Settings</span> › <span class="ui">Apps</span> › <span class="ui">Installed apps</span> › Flight Deck Manager. Your flights and settings are kept.</p></div></details>
+        <details id="faq-manual"><summary><span class="qt">Can I install the apps without the Manager?</span></summary><div class="a"><p><b>Yes,</b> from <a href="downloads.html">Manual downloads</a>, for PCs where the Manager can't be used. Those copies don't update by themselves; the Manager can look after them later with <span class="ui">Take over</span> (<a href="#by-hand">see above</a>).</p></div></details>
+        <details id="faq-vantage"><summary><span class="qt">When is Vantage coming?</span></summary><div class="a"><p>Vantage (cameras, sound and feel) isn't released yet. It appears in Flight Deck Manager when it's ready, and <a href="whats-new.html">What's new</a> lists it from then on.</p></div></details>
+      </div>
+    </div>
 
     <article class="step" id="contact">
       <div class="hd"><span class="ring" style="width:46px;height:46px"><svg class="i" viewBox="0 0 24 24"><use href="#i-user"/></svg></span><div class="w"><span class="num">Still stuck</span><h2>Send the details</h2></div></div>
@@ -563,6 +647,60 @@ section.doc{padding:0;scroll-margin-top:84px}
 
   </div>
 </main>
+<script>
+/* Help search: filters the fixes and the questions as you type; a link to a fix or a question opens it */
+(function(){
+  var input=document.getElementById('q'), clr=document.querySelector('.hsearch .clr');
+  var count=document.getElementById('qcount'), none=document.getElementById('qnone'), word=document.getElementById('qword');
+  var fixes=[].slice.call(document.querySelectorAll('main details.fix'));
+  var faqs=[].slice.call(document.querySelectorAll('.faq details'));
+  var faqSec=document.getElementById('faq'), go=document.querySelector('.hsearch .go'), fold=document.querySelector('.foldall');
+  var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[‘’]/g,"'").replace(/[“”]/g,'"')};
+  var items=fixes.concat(faqs).map(function(el){return {el:el,text:norm(el.textContent)}});
+  var total=function(){return fixes.length+' fixes and '+faqs.length+' questions.'};
+  function unmark(){[].slice.call(document.querySelectorAll('mark.hl')).forEach(function(m){var p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize()})}
+  function mark(el,words){
+    var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,null),nodes=[],n;
+    while((n=w.nextNode())){if(n.parentNode.closest('svg,script,style'))continue;nodes.push(n)}
+    nodes.forEach(function(t){
+      var s=t.nodeValue,l=norm(s),hits=[];
+      words.forEach(function(x){var i=l.indexOf(x);while(i>-1){hits.push([i,i+x.length]);i=l.indexOf(x,i+x.length)}});
+      if(!hits.length)return;
+      hits.sort(function(a,b){return a[0]-b[0]});
+      var f=document.createDocumentFragment(),at=0;
+      hits.forEach(function(h){if(h[0]<at)return;f.appendChild(document.createTextNode(s.slice(at,h[0])));var m=document.createElement('mark');m.className='hl';m.textContent=s.slice(h[0],h[1]);f.appendChild(m);at=h[1]});
+      f.appendChild(document.createTextNode(s.slice(at)));t.parentNode.replaceChild(f,t);
+    });
+  }
+  function run(){
+    var raw=input.value.trim(), words=norm(raw).split(/\s+/).filter(Boolean).map(function(x){return x.length>3&&/[^s]s$/.test(x)?x.slice(0,-1):x});
+    unmark(); clr.hidden=!raw;
+    if(!words.length){items.forEach(function(it){it.el.hidden=false;it.el.open=false});faqSec.hidden=false;none.hidden=true;go.hidden=false;fold.hidden=false;count.textContent=total();return}
+    var nf=0,nq=0;
+    items.forEach(function(it){
+      var ok=words.every(function(x){return it.text.indexOf(x)>-1});
+      it.el.hidden=!ok;
+      it.el.open=ok;if(ok){if(it.el.classList.contains('fix'))nf++;else nq++}
+      if(ok)mark(it.el,words);
+    });
+    faqSec.hidden=!nq; none.hidden=!!(nf+nq); go.hidden=!(nf+nq); fold.hidden=!nf; word.textContent=raw;
+    var p=function(n,a,b){return n+' '+(n===1?a:b)};
+    var parts=[];if(nf)parts.push(p(nf,'fix','fixes'));if(nq)parts.push(p(nq,'question','questions'));
+    count.textContent=parts.length?(parts.join(' and ')+(nf+nq===1?' matches.':' match.')):'No matches.';
+  }
+  input.addEventListener('input',run);
+  input.addEventListener('keydown',function(e){if(e.key==='Escape'){input.value='';run()}});
+  clr.addEventListener('click',function(){input.value='';run();input.focus()});
+  document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement!==input&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){e.preventDefault();input.focus()}});
+  try{var u=new URLSearchParams(location.search).get('q');if(u){input.value=u;run()}}catch(e){}
+  function openTo(id){var t=id&&document.getElementById(id);if(t&&t.tagName==='DETAILS'){t.hidden=false;t.open=true;}}
+  document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]');if(a)openTo(a.getAttribute('href').slice(1));
+    var b=e.target.closest('.foldall button');if(b)fixes.forEach(function(d){if(!d.hidden)d.open=b.getAttribute('data-f')==='1'})});
+  window.addEventListener('hashchange',function(){openTo(location.hash.slice(1))});
+  openTo(location.hash.slice(1));
+  count.textContent=total();
+})();
+</script>
 
 <footer>
   <div class="wrap">
