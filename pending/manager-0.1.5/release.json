@@ -1,9 +1,0 @@
-{
- "tag": "manager-0.1.5",
- "title": "Flight Deck Manager 0.1.5",
- "latest": true,
- "files": [
-  "FlightDeckManager-Setup.exe",
-  "CHECKSUMS.txt"
- ]
-}

@@ -1,3 +1,0 @@
-Flight Deck Manager 0.1.5 · Flight Deck Suite · Malcolm Syme · mcsyme11@gmail.com
-
-SHA-256  c819df3f44c178174ea47ea730bbd6f214af395c4f195231e53bd0ea8fbd67c0  FlightDeckManager-Setup.exe (1294336 bytes)
