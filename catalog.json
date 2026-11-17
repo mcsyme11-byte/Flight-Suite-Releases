@@ -1,19 +1,28 @@
 {
  "v": 1,
  "manager": {
-  "version": "0.1.4",
-  "date": "2026-11-14",
-  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.4/FlightDeckManager-Setup.exe",
-  "sha256": "f398d986aec0a1a594fddaae6c718e580251cc98fae698c482d06cc182318f3a",
-  "size": 1185792,
+  "version": "0.1.5",
+  "date": "2026-11-17",
+  "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/manager-0.1.5/FlightDeckManager-Setup.exe",
+  "sha256": "c819df3f44c178174ea47ea730bbd6f214af395c4f195231e53bd0ea8fbd67c0",
+  "size": 1294336,
   "notes": [
-   "Each app's Details page names every folder on this PC, such as Your flights, Playback recordings, Video clips and Screenshots, with a note on what's in it.",
-   "How much space each folder takes, shown beside its name.",
-   "Folder paths wrap neatly between folder names, and the Open buttons line up.",
-   "Settings \u203a Folders also lists the Manager's own folder, with a note on each.",
-   "Tidier layouts: every update shows its version and date, and badges and buttons sit evenly in a narrow window."
+   "The Flight Deck Suite mission patch is the Manager's new logo: in the window, the taskbar, the notification area and the Start menu.",
+   "Each app's card and row shows its own badge, the patch's frame with the app's symbol.",
+   "Running the setup file opens a setup window with the patch: it asks before installing and shows the install's progress.",
+   "About shows the trademark line under the credit."
   ],
   "history": [
+   {
+    "version": "0.1.5",
+    "date": "2026-11-17",
+    "notes": [
+     "The Flight Deck Suite mission patch is the Manager's new logo: in the window, the taskbar, the notification area and the Start menu.",
+     "Each app's card and row shows its own badge, the patch's frame with the app's symbol.",
+     "Running the setup file opens a setup window with the patch: it asks before installing and shows the install's progress.",
+     "About shows the trademark line under the credit."
+    ]
+   },
    {
     "version": "0.1.4",
     "date": "2026-11-14",
@@ -64,13 +73,13 @@
    "sub": "with Playback and Hangar",
    "desc": "Logs every flight by itself, with an accurate landing rate, landing replays, the Logbook site and Share my flight.",
    "status": "available",
-   "version": "4.9",
-   "date": "2026-11-10",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.9/Logbook-4.9.zip",
-   "sha256": "dd128202a3bbd32a9049f1809a54bd47044a76cc2f274c62a3222178c130e979",
-   "size": 13840673,
+   "version": "4.11",
+   "date": "2026-11-17",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.11/Logbook-4.11.zip",
+   "sha256": "f966d064a9d688c21a0323d48c079fe2c5b7604edc236f29b5e64af2b1d8b883",
+   "size": 13826120,
    "notes": [
-    "The first public release."
+    "The Flight Deck Suite's new logo: Logbook's icon in the window, taskbar and tray, the Logbook site and the share page now carries the mission patch, with Logbook's book in the centre."
    ],
    "needs": [
     {
@@ -92,6 +101,20 @@
    "start": "msfs",
    "history": [
     {
+     "version": "4.11",
+     "date": "2026-11-17",
+     "notes": [
+      "The Flight Deck Suite's new logo: Logbook's icon in the window, taskbar and tray, the Logbook site and the share page now carries the mission patch, with Logbook's book in the centre."
+     ]
+    },
+    {
+     "version": "4.10",
+     "date": "2026-11-17",
+     "notes": [
+      "Screenshot pins: your screenshots on each flight's map, where you took them. All your time on VATSIM counted, as VATSIM counts it. Settings \u203a VATSIM: your VATSIM ID and the VATSIM hour source, to include the hours on your VATSIM account."
+     ]
+    },
+    {
      "version": "4.9",
      "date": "2026-11-10",
      "notes": [
@@ -106,13 +129,13 @@
    "sub": "airliners at the empty gates",
    "desc": "Parks airliners on empty stands in the right airlines for each airport, and keeps your gate and VATSIM pilots' stands clear.",
    "status": "available",
-   "version": "0.3.1",
-   "date": "2026-11-10",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/ramp-0.3.1/Ramp-0.3.1.zip",
-   "sha256": "0a1009ed39e6d977cbd5086994c193bd036008924f2704426a6eb6306463a48d",
-   "size": 2529303,
+   "version": "0.3.2",
+   "date": "2026-11-17",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/ramp-0.3.2/Ramp-0.3.2.zip",
+   "sha256": "19930596836bc63f2b8a8de4ac4e91eb7fa7572d8d8ceba9963c8e622e38147a",
+   "size": 2578986,
    "notes": [
-    "The first public release."
+    "The Flight Deck Suite's new logo: Ramp's icon in the window, taskbar and tray now carries the mission patch, with Ramp's aircraft in the centre."
    ],
    "needs": [
     {
@@ -137,6 +160,13 @@
    "start": "msfs",
    "history": [
     {
+     "version": "0.3.2",
+     "date": "2026-11-17",
+     "notes": [
+      "The Flight Deck Suite's new logo: Ramp's icon in the window, taskbar and tray now carries the mission patch, with Ramp's aircraft in the centre."
+     ]
+    },
+    {
      "version": "0.3.1",
      "date": "2026-11-10",
      "notes": [
@@ -159,13 +189,13 @@
    "sub": "vPilot on your phone",
    "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
    "status": "available",
-   "version": "6.8",
-   "date": "2026-11-14",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.8/Squawk-6.8.zip",
-   "sha256": "dd0941cf23b516ce16e9c1e45dc74b0142ce2c7714ec0900faa8b8b8afcd4127",
-   "size": 723341,
+   "version": "6.9",
+   "date": "2026-11-17",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.9/Squawk-6.9.zip",
+   "sha256": "b9dc4c1be10df0ab4fd56367a3c365083448ffa7af26c2ea02ce110350c0031f",
+   "size": 712111,
    "notes": [
-    "Flight watch: no more false \"MSFS went back to the menu\" alerts when the sim stutters; the alert now comes only after 20 s really in the menu."
+    "The Flight Deck Suite's new logo: Squawk's Home Screen icon and header badge now carry the mission patch, with Squawk's phone symbol in the centre."
    ],
    "needs": [
     {
@@ -188,6 +218,13 @@
    "icon": "phone",
    "start": "vpilot",
    "history": [
+    {
+     "version": "6.9",
+     "date": "2026-11-17",
+     "notes": [
+      "The Flight Deck Suite's new logo: Squawk's Home Screen icon and header badge now carry the mission patch, with Squawk's phone symbol in the centre."
+     ]
+    },
     {
      "version": "6.8",
      "date": "2026-11-14",

@@ -7,6 +7,10 @@ documentation, designs and builds in this repository, is the work of Malcolm Sym
 use under their Terms of Use (legal.html on the website). No permission is granted to copy, modify, sell or distribute them, or any
 file in this repository, without written permission from the author.
 
+**Trademarks.** Flight Deck Suite™ and the Flight Deck Suite patch (the logo in `brand/`) are trademarks of
+Malcolm Syme. They may not be used for other products or in a way that suggests endorsement without written
+permission.
+
 The suite uses third-party software, data and services that keep their own licences, terms and acknowledgements;
 they are listed in THIRD-PARTY-NOTICES.md. The data files Ramp ships that are made from open data keep those
 data's licences, not the reservation above: `ramp-mix.jsonl` and `time-zones.json` are offered under the Open

@@ -1,3 +1,5 @@
+<p align="center"><img src="brand/flight-deck-suite-patch.png" width="180" alt="The Flight Deck Suite mission patch"></p>
+
 # Flight Deck Suite
 
 **Free companion apps for Microsoft Flight Simulator 2024 on the VATSIM network.** An automatic logbook with an accurate landing rate and landing replays, a phone remote for vPilot, parked airliners at the empty gates and a finder for everything in the Community folder, installed, updated and removed by one app: **Flight Deck Manager**.
@@ -6,7 +8,7 @@
 
 > This repository hosts the official downloads, release notes and website of Flight Deck Suite. The source code is maintained privately.
 >
-> **Status:** the first public release was published on Nov 10, 2026 (Flight Deck Manager 0.1.1, Logbook 4.9, Ramp 0.3.1 and Squawk 6.6). Since then: Squawk 6.7 (Nov 11), Flight Deck Manager 0.1.3 (Nov 13), and Squawk 6.8 and Flight Deck Manager 0.1.4 (Nov 14), the current versions. Every version's changes are on the [What's new](https://mcsyme11-byte.github.io/Flight-Suite-Releases/whats-new.html) page. Vantage is coming soon.
+> **Status:** the first public release was published on Nov 10, 2026 (Flight Deck Manager 0.1.1, Logbook 4.9, Ramp 0.3.1 and Squawk 6.6). Since then: Squawk 6.7 (Nov 11), Flight Deck Manager 0.1.3 (Nov 13), Squawk 6.8 and Flight Deck Manager 0.1.4 (Nov 14), and on Nov 17 the suite's new logo with Flight Deck Manager 0.1.5, Logbook 4.11, Ramp 0.3.2 and Squawk 6.9, the current versions. Every version's changes are on the [What's new](https://mcsyme11-byte.github.io/Flight-Suite-Releases/whats-new.html) page. Vantage is coming soon.
 
 ---
 
@@ -103,4 +105,5 @@ Questions and problem reports may be sent to **Malcolm Syme** at [mcsyme11@gmail
 
 ---
 
-Flight Deck Suite © 2026 Malcolm Syme. All rights reserved.
+Flight Deck Suite © 2026 Malcolm Syme. All rights reserved.<br>
+<sub>Flight Deck Suite™ and the Flight Deck Suite patch are trademarks of Malcolm Syme.</sub>
