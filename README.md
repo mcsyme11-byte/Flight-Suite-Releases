@@ -76,8 +76,8 @@ The apps work alongside a few free programs made by other people. The [Before yo
 
 ## Installation
 
-1. Download **FlightDeckManager-Setup.exe** and open it.
-2. If Windows displays **"Windows protected your PC"**, select **More info**, then **Run anyway**. The warning appears because the Manager is new and is not yet signed with a commercial code-signing certificate; it does not indicate a problem with the software.
+1. Download **FlightDeckManager-Setup.exe**. If the browser says it **isn't commonly downloaded**, keep it: in Edge, select **⋯** next to the file in the Downloads list, then **Keep**, **Show more** and **Keep anyway**; in Chrome, select **Keep**.
+2. Open the file. If Windows displays **"Windows protected your PC"**, select **More info**, then **Run anyway**. Both warnings appear because the Manager is new and is not yet signed with a commercial code-signing certificate; they do not indicate a problem with the software.
 3. Choose your apps and select **Install**. The Manager checks the PC, downloads each app, checks it and installs it, and keeps them up to date from then on.
 
 **To uninstall:** Windows Settings › Apps › Installed apps › Flight Deck Manager › Uninstall. Your flights, recordings and settings (`Documents\Flight Deck Suite` and `%LOCALAPPDATA%\Flight Deck Suite`) are kept; these folders may be deleted manually.
