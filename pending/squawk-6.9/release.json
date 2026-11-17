@@ -1,0 +1,9 @@
+{
+ "tag": "squawk-6.9",
+ "title": "Squawk 6.9",
+ "latest": false,
+ "files": [
+  "Squawk-6.9.zip",
+  "CHECKSUMS.txt"
+ ]
+}
