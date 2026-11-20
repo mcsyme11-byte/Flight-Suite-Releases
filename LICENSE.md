@@ -1,5 +1,7 @@
 # Licence
 
+<img src="brand/flight-deck-suite-patch.png" width="72" align="right" alt="Flight Deck Suite patch">
+
 Copyright (c) 2026 Malcolm Syme (mcsyme11@gmail.com). All rights reserved.
 
 Flight Deck Suite (Flight Deck Manager, Logbook, Playback, Hangar, Squawk, Ramp and Vantage), including the website,
@@ -20,3 +22,11 @@ Creative Commons Attribution-ShareAlike 4.0 (© Wikipedia contributors).
 Flight Deck Suite is an independent project and is not made by, endorsed by or affiliated with Microsoft, Asobo
 Studio, VATSIM, the developer of vPilot, Tailscale, the OBS Project, FSLTL, FlyByWire Simulations, FSDreamTeam,
 Navigraph, SimBrief, GitHub or Apple. For simulation use only.
+
+---
+
+<div align="center">
+<sub>© 2026 Malcolm Syme · All rights reserved · <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a></sub>
+<br>
+<sub><i>Flight Deck Suite™ and the Flight Deck Suite patch are trademarks of Malcolm Syme.</i></sub>
+</div>

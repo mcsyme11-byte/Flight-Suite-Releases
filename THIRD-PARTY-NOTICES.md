@@ -1,5 +1,7 @@
 # Third-party notices
 
+<img src="brand/flight-deck-suite-patch.png" width="72" align="right" alt="Flight Deck Suite patch">
+
 Flight Deck Suite is built with, and on, the work of other people and projects. Thank you to their authors. Each item
 keeps its own licence; the links lead to the authoritative text. Each app also lists its credits in its own About
 page, and each release's package includes the notices for the files it ships.
@@ -93,4 +95,8 @@ similar serif.
 
 ---
 
-Flight Deck Suite © 2026 Malcolm Syme · mcsyme11@gmail.com
+<div align="center">
+<sub>© 2026 Malcolm Syme · All rights reserved · <a href="mailto:mcsyme11@gmail.com">mcsyme11@gmail.com</a></sub>
+<br>
+<sub><i>Flight Deck Suite™ and the Flight Deck Suite patch are trademarks of Malcolm Syme.</i></sub>
+</div>
