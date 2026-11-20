@@ -73,13 +73,13 @@
    "sub": "with Playback and Hangar",
    "desc": "Logs every flight by itself, with an accurate landing rate, landing replays, the Logbook site and Share my flight.",
    "status": "available",
-   "version": "4.11",
-   "date": "2026-11-17",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.11/Logbook-4.11.zip",
-   "sha256": "f966d064a9d688c21a0323d48c079fe2c5b7604edc236f29b5e64af2b1d8b883",
-   "size": 13826120,
+   "version": "4.12",
+   "date": "2026-11-19",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.12/Logbook-4.12.zip",
+   "sha256": "34ae582ca200b13dd5c51bbeb1b7f43f36d00c8592efc9f9a403f1bd1c09342b",
+   "size": 13827898,
    "notes": [
-    "The Flight Deck Suite's new logo: Logbook's icon in the window, taskbar and tray, the Logbook site and the share page now carries the mission patch, with Logbook's book in the centre."
+    "Route maps have a Full screen button: the map alone on the whole screen, with Esc or the same button to come back. The Show all button has its own icon, so the two can't be confused."
    ],
    "needs": [
     {
@@ -100,6 +100,13 @@
    "icon": "book",
    "start": "msfs",
    "history": [
+    {
+     "version": "4.12",
+     "date": "2026-11-19",
+     "notes": [
+      "Route maps have a Full screen button: the map alone on the whole screen, with Esc or the same button to come back. The Show all button has its own icon, so the two can't be confused."
+     ]
+    },
     {
      "version": "4.11",
      "date": "2026-11-17",
@@ -129,13 +136,13 @@
    "sub": "airliners at the empty gates",
    "desc": "Parks airliners on empty stands in the right airlines for each airport, and keeps your gate and VATSIM pilots' stands clear.",
    "status": "available",
-   "version": "0.3.2",
-   "date": "2026-11-17",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/ramp-0.3.2/Ramp-0.3.2.zip",
-   "sha256": "19930596836bc63f2b8a8de4ac4e91eb7fa7572d8d8ceba9963c8e622e38147a",
-   "size": 2578986,
+   "version": "0.3.3",
+   "date": "2026-11-19",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/ramp-0.3.3/Ramp-0.3.3.zip",
+   "sha256": "a97ca9c731f5e8232a546786a0fdc60b3bc9a562a3b4e643b0a89b42a59dab34",
+   "size": 2579959,
    "notes": [
-    "The Flight Deck Suite's new logo: Ramp's icon in the window, taskbar and tray now carries the mission patch, with Ramp's aircraft in the centre."
+    "Parked aircraft no longer vanish as you taxi past them; only the gate you park on or really pull into is cleared, and the aircraft beside your gate stay unless your wings would reach them."
    ],
    "needs": [
     {
@@ -159,6 +166,13 @@
    "icon": "plane",
    "start": "msfs",
    "history": [
+    {
+     "version": "0.3.3",
+     "date": "2026-11-19",
+     "notes": [
+      "Parked aircraft no longer vanish as you taxi past them; only the gate you park on or really pull into is cleared, and the aircraft beside your gate stay unless your wings would reach them."
+     ]
+    },
     {
      "version": "0.3.2",
      "date": "2026-11-17",
