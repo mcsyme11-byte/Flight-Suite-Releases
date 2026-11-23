@@ -203,13 +203,13 @@
    "sub": "vPilot on your phone",
    "desc": "A vPilot plugin and an iPhone and iPad app: ATC messages, the connection, a live map and alerts, in your pocket.",
    "status": "available",
-   "version": "6.9",
-   "date": "2026-11-17",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.9/Squawk-6.9.zip",
-   "sha256": "b9dc4c1be10df0ab4fd56367a3c365083448ffa7af26c2ea02ce110350c0031f",
-   "size": 712111,
+   "version": "6.10",
+   "date": "2026-11-23",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/squawk-6.10/Squawk-6.10.zip",
+   "sha256": "be36b7b85e7a0ded0df004aea5194a800abda8cf2c701e15b151c865b23ef635",
+   "size": 712401,
    "notes": [
-    "The Flight Deck Suite's new logo: Squawk's Home Screen icon and header badge now carry the mission patch, with Squawk's phone symbol in the centre."
+    "All-time Hours and VATSIM hours now include your VATSIM account's hours when Logbook's VATSIM hour source is set to VATSIM, the same as the Logbook site. This week and this month are unchanged."
    ],
    "needs": [
     {
@@ -232,6 +232,13 @@
    "icon": "phone",
    "start": "vpilot",
    "history": [
+    {
+     "version": "6.10",
+     "date": "2026-11-23",
+     "notes": [
+      "All-time Hours and VATSIM hours now include your VATSIM account's hours when Logbook's VATSIM hour source is set to VATSIM, the same as the Logbook site. This week and this month are unchanged."
+     ]
+    },
     {
      "version": "6.9",
      "date": "2026-11-17",
