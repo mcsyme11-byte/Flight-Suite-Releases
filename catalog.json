@@ -73,13 +73,13 @@
    "sub": "with Playback and Hangar",
    "desc": "Logs every flight by itself, with an accurate landing rate, landing replays, the Logbook site and Share my flight.",
    "status": "available",
-   "version": "4.12",
-   "date": "2026-11-19",
-   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.12/Logbook-4.12.zip",
-   "sha256": "34ae582ca200b13dd5c51bbeb1b7f43f36d00c8592efc9f9a403f1bd1c09342b",
-   "size": 13827898,
+   "version": "4.13",
+   "date": "2026-11-23",
+   "url": "https://github.com/mcsyme11-byte/Flight-Suite-Releases/releases/download/logbook-4.13/Logbook-4.13.zip",
+   "sha256": "386510abe0d14f8056b545cdc951c263495cedfe574d74637dc0b475a9e4c976",
+   "size": 13828364,
    "notes": [
-    "Route maps have a Full screen button: the map alone on the whole screen, with Esc or the same button to come back. The Show all button has its own icon, so the two can't be confused."
+    "A moment when the sim stutters and looks like the main menu no longer shows as In the menus (in Squawk and on the share page) or stops your hours: Logbook waits 20 seconds first, as it already did before closing a flight."
    ],
    "needs": [
     {
@@ -100,6 +100,13 @@
    "icon": "book",
    "start": "msfs",
    "history": [
+    {
+     "version": "4.13",
+     "date": "2026-11-23",
+     "notes": [
+      "A moment when the sim stutters and looks like the main menu no longer shows as In the menus (in Squawk and on the share page) or stops your hours: Logbook waits 20 seconds first, as it already did before closing a flight."
+     ]
+    },
     {
      "version": "4.12",
      "date": "2026-11-19",
